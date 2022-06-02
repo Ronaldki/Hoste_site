@@ -3,6 +3,11 @@
     
     <?php
     include "../include/navbar.php";
+    if (!isset($_SESSION['login_id'])) {
+
+        // take us back to the login form
+        // header("location:tables.php");
+    }
     ?>
        <!-- 
            Navbar section.............
@@ -26,7 +31,7 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Name </th>
                                             <th>Position</th>
                                             <th>Office</th>
                                             <th>Age</th>
