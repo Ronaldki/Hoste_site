@@ -6,12 +6,12 @@ if(isset($_POST['submit'])){
 $fname = mysqli_real_escape_string($con, $_POST['fname']);
 $lname = mysqli_real_escape_string($con, $_POST['lname']);
 $email = mysqli_real_escape_string($con, $_POST['email']);
-// $phone = mysqli_real_escape_string($con, $_POST['phone']);
+$phone = mysqli_real_escape_string($con, $_POST['phone']);
 $password =   $_POST['password'] ;
 $confirm_password =   $_POST['confirm_password'];
 
 // .........CHECHING IF USER HAS NO ACCOUNT YET............
-$sql = "SELECT  * FROM user_tbl WHERE email = '$email' AND  ";
+$sql = "SELECT  * FROM user_tbl WHERE email = '$email' AND type = 'super_admin' ";
 $result = mysqli_query($con, $sql);
 if(mysqli_num_rows($result) >0){
     echo '<script>alert("Email already exist...")</script>';

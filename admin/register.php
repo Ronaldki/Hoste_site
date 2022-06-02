@@ -1,5 +1,5 @@
 <?php
-include('./config/process_register.php');
+include('./config/__register.php');
 
 ?>
 
