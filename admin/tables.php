@@ -19,7 +19,8 @@
                             include "../include/admin_user_list.php";
                         ?>
                         <!--  -->
-                        <div class="card mb-4">
+                       
+                        <div class="card mb-4" id='admin_table'>
                             
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -504,6 +505,7 @@
                                 </table>
                             </div>
                         </div>
+                       
                     </div>
                 </main>
                 <?php
@@ -511,8 +513,10 @@
     ?>
             </div>
         </div>
+        <script src="./js/jQuery.js" ></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
+        <script src="./js/custom.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
