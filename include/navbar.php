@@ -90,6 +90,7 @@ if (!isset($_SESSION['login_id'])) {
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <!-- <a class="nav-link" href="login.php">Login</a> -->
                                 <a class="nav-link" href="register.php">Register Admin</a>
+                                <a class="nav-link" href="register_house_owners.php">Register House owners</a>
                                 <a class="nav-link" href="password.php">Forgot Password</a>
                             </nav>
                         </div>

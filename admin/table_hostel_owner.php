@@ -44,7 +44,7 @@
                             // sellect all the admins from the database
                             $num = 0;
 
-                            $sql = "SELECT * FROM user_tbl WHERE type = 'super_admin' AND status='active'";
+                            $sql = "SELECT * FROM user_tbl WHERE type = 'house_owner' AND status='active'";
                             $result = mysqli_query($con, $sql);
                             if ($result) {
                                 while ($rows = mysqli_fetch_assoc($result)) { ?>

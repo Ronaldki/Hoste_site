@@ -8,11 +8,11 @@ if(!$con){
 
 
 
-// yhis is the function for frgistering all users
+// this is the function for frgistering all users
 function registerusers($fname, $lname, $type, $phone, $email, $password, $confirm_password, $status, $con){
 
 // .........CHECHING IF USER HAS NO ACCOUNT YET............
-$sql = "SELECT  * FROM user_tbl WHERE email = '$email' AND type = 'super_admin' ";
+$sql = "SELECT  * FROM user_tbl WHERE email = '$email' AND type = '$type' ";
 $result = mysqli_query($con, $sql);
 if(mysqli_num_rows($result) >0){
     echo '<script>alert("Email already exist...")</script>';
