@@ -53,6 +53,8 @@ if(mysqli_num_rows($result) >0){
 
 }
 
+// function for deleting auser
+
 function delete_user($user_id,$status, $con){
     $sql ="UPDATE user_tbl SET status = '$status' WHERE user_id = $user_id ";
 

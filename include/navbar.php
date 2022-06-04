@@ -2,7 +2,6 @@
 
 // setting up the session for loggin in
 session_start();
-// include('./admin/config/connect.php');
 if (!isset($_SESSION['login_id'])) {
 
     // take us back to the login form
@@ -22,7 +21,9 @@ if (!isset($_SESSION['login_id'])) {
     <meta name="author" content="" />
     <title>Admin Pannel</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../admin/css/bootstrap.min.css">
     <link href="css/styles.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="../admin/css/toggle.css"> -->
 
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>

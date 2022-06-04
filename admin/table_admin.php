@@ -2,6 +2,7 @@
 include "../include/navbar.php";
 include "../admin/config/connect.php";
 
+
 ?>
 <!-- 
            Navbar section.............
@@ -54,7 +55,7 @@ include "../admin/config/connect.php";
                                                 echo '<i  class="fa fa-user"></i>';
                                             } else { ?>
 
-                                                <img src="../admin/assets/img/testimonial-bg1.jpg" alt="" width="40px "; height="40px" ;>
+                                                <img src="../admin/assets/img/testimonial-bg1.jpg" alt="" width="40px " ; height="40px" ;>
                                             <?php
 
                                             }
@@ -62,29 +63,19 @@ include "../admin/config/connect.php";
                                         </td>
                                         <td><?php echo $rows['date'] ?></td>
                                         <td class="justify-between">
-                                            <a href="update.php?update=<?php echo $rows['user_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['user_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
-                                            <a href="table_admin.php?delete=<?php echo $rows['user_id']; ?>"><i class="fa fa-trash text-danger"></i></a>
+                                            <a href="./config/__update_superAdmin.php?update=<?php echo $rows['user_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['user_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                                            <a href="./config/__delete_superAdmin.php?delete=<?php echo $rows['user_id']; ?>"><i class="fa fa-trash text-danger"></i></a>
                                         </td>
                                     </tr>
 
                             <?php
                                 }
                             }
-
-                            // dllete admin from the user table
-                            $user_id = $_GET['delete'];
-                            $status = 'inactive';
-
-                            delete_user($user_id, $status, $con);
-
                             ?>
 
                         </tbody>
                     </table>
                 </div>
-
-                <!-- form for entering your new and old password before validating -->
-                
 
             </div>
         </div>
@@ -93,6 +84,7 @@ include "../admin/config/connect.php";
     include "../include/footer.php";
     ?>
 </div>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/scripts.js"></script>
