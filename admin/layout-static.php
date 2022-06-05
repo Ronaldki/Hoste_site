@@ -42,7 +42,7 @@ include "../include/navbar.php";
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <div class="form-floating mb-3 mb-md-0">
-                                <input name='hostelId' value="<?php echo $userId; ?>" class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" />
+                                <input name='hostelId' value="<?php echo $userId; ?>" class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" />
                                 <label for="inputFirstName">user Id</label>
                             </div>
                         </div>

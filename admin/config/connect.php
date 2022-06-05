@@ -24,7 +24,7 @@ if(mysqli_num_rows($result) >0){
         echo '<script>alert("Password not match...") </script';
         
     }else{
-        if(strlen($fname)>2 && strlen($lname)>2 && strlen($password)>4){
+        if(strlen($fname)>2 || strlen($lname)>2 || strlen($password)>4){
             $hash_password = password_hash($password, PASSWORD_DEFAULT);
             
             // INSERT THE  user record into the database
@@ -55,8 +55,8 @@ if(mysqli_num_rows($result) >0){
 
 // function for deleting auser
 
-function delete_user($user_id,$status, $con){
-    $sql ="UPDATE user_tbl SET status = '$status' WHERE user_id = $user_id ";
+function delete_user($sql, $con){
+    // $sql ="UPDATE user_tbl SET status = '$status' WHERE user_id = $user_id ";
 
     $result = mysqli_query($con, $sql);
     if($result){

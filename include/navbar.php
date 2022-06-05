@@ -26,6 +26,7 @@ if (!isset($_SESSION['login_id'])) {
     <!-- <link rel="stylesheet" href="../admin/css/toggle.css"> -->
 
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../admin/css/styles.css">
 </head>
 
 <body class="sb-nav-fixed">
@@ -107,7 +108,9 @@ if (!isset($_SESSION['login_id'])) {
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    <?php echo "  ".$_SESSION['user_name']; ?>
+                    <?php echo "  " . $_SESSION['user_name']; ?>
                 </div>
             </nav>
         </div>
+
+        <script src="../admin/js/sweetalert2.all.min.js"></script>
