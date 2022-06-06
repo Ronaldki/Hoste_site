@@ -16,7 +16,7 @@ if (empty($hostelId) || empty($hostelNmame) || empty($hostelDescription)) {
     if($execute1){
 
         if (mysqli_num_rows($execute1) > 0) {
-            echo '<script>alert("hostel has already been registered")</script>';
+            echo '<script>swal.fire("oops","hostel aready exist...", "success")</script>';
         } else {
     
             $sql2 = "INSERT INTO hostel_tbl (hostel_name, user_id, hostel_description,status )
@@ -27,7 +27,7 @@ if (empty($hostelId) || empty($hostelNmame) || empty($hostelDescription)) {
                 // $success = '<p class="text-success">Hostel add successfully...</p>';
                 echo ('<script>alert("Hostel added successfully...")</script>');
             } else {
-                echo mysqli_error($con) . '<script>alert("Hostel added successfully...")</script>';
+                echo mysqli_error($con) . '<script>swal.fire("oops","Hostel added successfully...", "success")</script>';
             }
         }
     }else {

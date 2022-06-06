@@ -1,5 +1,8 @@
 <!-- ..................adding connetion to the DATABASE............. -->
 <?php
+date_default_timezone_set("Africa/Kampala");
+
+
 $con = mysqli_connect("localhost", "root","", "beacon_db");
 
 if(!$con){
@@ -24,7 +27,7 @@ if(mysqli_num_rows($result) >0){
         echo '<script>alert("Password not match...") </script';
         
     }else{
-        if(strlen($fname)>2 || strlen($lname)>2 || strlen($password)>4){
+        if(strlen($fname)>2 && strlen($lname)>2 && strlen($password)>4){
             $hash_password = password_hash($password, PASSWORD_DEFAULT);
             
             // INSERT THE  user record into the database
@@ -55,15 +58,33 @@ if(mysqli_num_rows($result) >0){
 
 // function for deleting auser
 
-function delete_user($sql, $con){
+function delete_user($sql, $con, $user_id, $deleted_table_name){
     // $sql ="UPDATE user_tbl SET status = '$status' WHERE user_id = $user_id ";
 
+    $date = date("Y-m-d h:i:sa");
     $result = mysqli_query($con, $sql);
     if($result){
         echo "<script>alert('delete successfully...')</script>";
     }else{
         echo "<scrpt>alert('Something went wrong...')</script>".mysqli_error($con);
     
+        
+    }
+
+    // first sellect all from table deleted user to check if the id already exist
+    $chech_id = "SELECT * FROM  $deleted_table_name WHERE id= '$user_id'";
+    $result = mysqli_query($con, $chech_id);
+    if(mysqli_num_rows($result) == 0){
+
+        // then insert the id and date of the deleted person in to the table delete users
+        $insert = "INSERT INTO $deleted_table_name (user_id, date) VALUES('$user_id', '$date')";
+        mysqli_query($con, $insert);
+    }else if(mysqli_num_rows($result) == 1){
+
+        // just update the time in the delete record tables
+        $update_time = "UPDATE $deleted_table_name SET date = '$date' WHERE user_id = '$user_id'";
+        mysqli_query($con, $update_time);
+
     }
 
 }

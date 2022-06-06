@@ -71,7 +71,7 @@
                                              <td><?php echo $rows['date'] ?></td>
                                              <td class="justify-between">
                                                  <a href="./config/__update_superAdmin.php?update=<?php echo $rows['user_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['user_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                 <a href="table_hostel_owner.php?delete=<?php echo $rows['user_id']; ?>"><i class="fa fa-trash text-danger"><?php echo $rows['user_id']; ?></i></a>
+                                                 <a href="./config/__delete_superAdmin.php?delete=<?php echo $rows['user_id']; ?>"><i class="fa fa-trash text-danger"><?php echo $rows['user_id']; ?></i></a>
                                              </td>
                                          </tr>
 
@@ -105,14 +105,10 @@
      <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
      <script src="js/datatables-simple-demo.js"></script>
      <script src="js/bootstrap.min.js"></script>
+     <script src="./js/"></script>
     </body>
     
          <?php
 
-         
-            $user_id = $_GET['delete'] ? $_GET['delete'] : '';
-            $status = 'inactive';
-            $sql = "UPDATE user_tbl SET status = '$status' WHERE user_id = $user_id ";
-            delete_user($sql, $con);
             ?>
     </html>
