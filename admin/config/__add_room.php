@@ -1,9 +1,10 @@
 <?php
-$con = mysqli_connect("localhost", "root","", "beacon_db");
+include "connect.php";
+// $con = mysqli_connect("localhost", "root","", "beacon_db");
 
-if(!$con){
-    echo mysqli_connect_error($con);
-}
+// if(!$con){
+//     echo mysqli_connect_error($con);
+// }
 if (isset($_POST['submit_room'])) {
 
     $roomname = $_POST['room_name'];
