@@ -1,3 +1,5 @@
+
+
 <?php
 include "connect.php";
 // $con = mysqli_connect("localhost", "root","", "beacon_db");
@@ -23,6 +25,7 @@ if (isset($_POST['submit_room'])) {
         while ($row = mysqli_fetch_assoc($qry3)) {
             $rslt = $row['hostel_id'];
             // echo $rslt;
+            echo "<script>alert('Added successfully')</script>";
         }
         $qry4 = "INSERT INTO room_tbl(hostel_id, room_name, room_fee, room_status) VALUES ('$rslt', '$roomname', '$fees', '$status' )";
 

@@ -1,24 +1,25 @@
-<?php
-include('./config/__register.php');
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Register</title>
     <link href="css/styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../admin/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
+    <script src="./js/sweetalert2.all.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
 </head>
 
+<?php
+include('./config/__register.php');
+
+?>
 <body class="bg-primary">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
@@ -99,7 +100,6 @@ include('./config/__register.php');
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-    <script src="../admin/js/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

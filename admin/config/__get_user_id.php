@@ -1,3 +1,5 @@
+
+
 <?php
 include "connect.php";
 $email = $_POST['email'];
@@ -11,11 +13,10 @@ if ($result) {
     
     while ($rows = mysqli_fetch_assoc($result)) {
         $userId = $rows['user_id'];
-        echo '<p class="text-success">Success, proceed to register hostel...</p>';
+        echo ("<script>alert('proceed to register hostel')</script>");
     }
 }else{
-    echo '<p class="text-success">user id not regestered with us, register first...</p>';
-}
+    echo ("<script>alert('User not registered')</script>");}
 } else {
 
     echo  '<p class="text-success">' . mysqli_error($con).'</p>';

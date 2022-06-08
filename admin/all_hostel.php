@@ -10,12 +10,7 @@ include "../include/navbar.php";
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4 text-secondary">Admins</h1>
-
-
-            <?php
-            include "../include/admin_user_list.php";
-            ?>
+            <h1 class="mt-4 text-info">Available Hostel</h1>
 
 
             <div class="card mb-4">
@@ -24,11 +19,11 @@ include "../include/navbar.php";
                         <thead>
                             <tr>
                                 <th>NO</th>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Image</th>
-                                <th> Date</th>
+                                <th>Hostel Name</th>
+                                <th>Reg. Date</th>
+                                <th>Hostel Details</th>
+                                <!-- <th>Image</th> -->
+                                <!-- <th> Date</th> -->
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -39,7 +34,7 @@ include "../include/navbar.php";
                             // sellect all the admins from the database
                             $num = 0;
 
-                            $sql = "SELECT * FROM user_tbl WHERE type = 'super_admin' AND status='active'";
+                            $sql = "SELECT * FROM hostel_tbl";
                             $result = mysqli_query($con, $sql);
                             if ($result) {
                                 while ($rows = mysqli_fetch_assoc($result)) { ?>
@@ -47,24 +42,16 @@ include "../include/navbar.php";
 
                                     <tr>
                                         <td><?php echo $num ?></td>
-                                        <td><?php echo $rows['fname'] . " " . $rows['lname'] ?></td>
-                                        <td><?php echo $rows['phone'] ?></td>
-                                        <td><?php echo $rows['email'] ?></td>
-                                        <td><?php
-                                            if ($rows['image'] != '') {
-                                                echo '<i  class="fa fa-user"></i>';
-                                            } else { ?>
-
-                                                <img src="../admin/assets/img/testimonial-bg1.jpg" alt="" width="40px " ; height="40px" ;>
-                                            <?php
-
-                                            }
-                                            ?>
+                                        <td><?php echo $rows['hostel_name'] ?></td>
+                                        <td><?php echo $rows['created_date'] ?></td>
+                              
+                                        <td>
+                                            <a href="./hostel_details?datails=<?php echo $rows['hostel_id']; ?>" class="text-info"><i class="fa fa-pencil"><?php echo $rows['hostel_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                                            
                                         </td>
-                                        <td><?php echo $rows['date'] ?></td>
                                         <td class="justify-between">
-                                            <a href="./config/__update_superAdmin.php?update=<?php echo $rows['user_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['user_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
-                                            <a href="./config/__delete_superAdmin.php?delete=<?php echo $rows['user_id']; ?>"><i class="fa fa-trash text-danger"><?php echo $rows['user_id']; ?></i></a>
+                                            <a href="./config/__update_hostel.php?update=<?php echo $rows['hostel_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['hostel_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                                            <a href="./config/__delete_hostel_and_rooms.php?hostel_id=<?php echo $rows['hostel_id']; ?>"><i class="fa fa-trash text-danger"><?php echo $rows['hostel_id']; ?></i></a>
                                         </td>
                                     </tr>
 

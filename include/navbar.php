@@ -1,14 +1,3 @@
-<?php
-
-// setting up the session for loggin in
-session_start();
-if (!isset($_SESSION['login_id'])) {
-
-    // take us back to the login form
-    header("location:index.php");
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +13,21 @@ if (!isset($_SESSION['login_id'])) {
     <!-- <link rel="stylesheet" href="../admin/css/bootstrap.min.css"> -->
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="../admin/css/sweetalert2.min.css">
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="../admin/js/sweetalert2.all.min.js"></script>
 
     <!-- <link rel="stylesheet" href="../admin/css/toggle.css"> -->
+<?php
+
+// setting up the session for loggin in
+session_start();
+if (!isset($_SESSION['login_id'])) {
+
+    // take us back to the login form
+    header("location:index.php");
+}
+
+?>
 
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../admin/css/styles.css">
@@ -115,6 +117,5 @@ if (!isset($_SESSION['login_id'])) {
             </nav>
         </div>
 
-        <script src="../admin/js/sweetalert2.all.min.js"></script>
         <script src="../admin/js/jQuery.js"></script>
-        <!-- <script src="../admin/js/custom.js"></script> -->
+        <script src="../admin/js/custom.js"></script>

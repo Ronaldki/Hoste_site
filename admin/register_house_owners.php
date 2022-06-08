@@ -1,7 +1,7 @@
 <?php
 ob_start();
-include "../include/navbar.php";
 include "../admin/config/connect.php";
+include "../include/navbar.php";
 // include('./config/__register_house_owners.php')
 
 
@@ -62,12 +62,7 @@ include "../admin/config/connect.php";
 
 
 
-include('./config/__register_house_owners.php');
-
-
-
-
-
+    include('./config/__register_house_owners.php');
     include "../include/footer.php";
     ?>
 </div>

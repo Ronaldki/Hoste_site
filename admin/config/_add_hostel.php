@@ -1,22 +1,23 @@
+
 <?php
 include "connect.php";
 $hostelId = trim($_POST['hostelId']);
 $hostelNmame = trim($_POST['hostelname']);
 $hostelDescription = trim($_POST['hostelDescription']);
-$status = 'status';
+$status = 'active';
 
 // query for sellecting the user id whhostelNae equela to the inhostelNae
 if (empty($hostelId) || empty($hostelNmame) || empty($hostelDescription)) {
-    echo '<p class="text-success">please fill out all the fills...</p>';
+    echo ("<script>alert('Fill out all the fields')</script>");
 } else {
 
     // first select to check if hostel is not yet registered
-    $sql1 = "SELECT * FROM hostel_tbl WHERE hostel_id = '$hostelNmame' AND status = 'active'";
+    $sql1 = "SELECT * FROM hostel_tbl WHERE hostel_name = '$hostelNmame' AND status = 'active'";
     $execute1 = mysqli_query($con, $sql1);
     if($execute1){
 
         if (mysqli_num_rows($execute1) > 0) {
-            echo '<script>swal.fire("oops","hostel aready exist...", "success")</script>';
+            echo ("<script>alert('Hostel already exist')</script>");
         } else {
     
             $sql2 = "INSERT INTO hostel_tbl (hostel_name, user_id, hostel_description,status )
@@ -25,9 +26,9 @@ if (empty($hostelId) || empty($hostelNmame) || empty($hostelDescription)) {
             $execute2 = mysqli_query($con, $sql2);
             if ($execute2) {
                 // $success = '<p class="text-success">Hostel add successfully...</p>';
-                echo ('<script>alert("Hostel added successfully...")</script>');
+                echo ("<script>alert('Successfully added')</script>");
             } else {
-                echo mysqli_error($con) . '<script>swal.fire("oops","Hostel added successfully...", "success")</script>';
+                echo (mysqli_error($con) . "<script>alert('Something went wrong')</script>");
             }
         }
     }else {

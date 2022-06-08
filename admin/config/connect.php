@@ -1,7 +1,5 @@
-<!-- ..................adding connetion to the DATABASE............. -->
 <?php
 date_default_timezone_set("Africa/Kampala");
-
 
 $con = mysqli_connect("localhost", "root","", "beacon_db");
 
@@ -13,18 +11,21 @@ if(!$con){
 
 // this is the function for frgistering all users
 function registerusers($fname, $lname, $type, $phone, $email, $password, $confirm_password, $status, $con){
+?>
 
+
+<?php
 // .........CHECHING IF USER HAS NO ACCOUNT YET............
 $sql = "SELECT  * FROM user_tbl WHERE email = '$email' AND type = '$type' ";
 $result = mysqli_query($con, $sql);
 if(mysqli_num_rows($result) >0){
-    echo '<script>alert("Email already exist...")</script>';
+    echo "<script>alert( 'This email is already in use...')</script>";
     // $err = 'Email already exist...';
 }else{
     
     // check if password matches confirm password.
     if($password!= $confirm_password){
-        echo '<script>alert("Password not match...") </script';
+        echo "<script>alert('Password not matching..')</script>";
         
     }else{
         if(strlen($fname)>2 && strlen($lname)>2 && strlen($password)>4){
@@ -36,18 +37,19 @@ if(mysqli_num_rows($result) >0){
          
          $res = mysqli_query($con, $sql);
          if($res){
-            header('location: home.php');
-
-        }else{
-                echo '<script>alert("Something went wrong...") </script';
-
+             header('location: home.php');
+             echo "<script>alert('oppps')</script>";
+             
+            }else{
+                echo "<script>
+                alert('Something went wrong')</script>";
             }
             
 
         }else{
 
             // throw error
-            echo '<script>alert("Your input is too short")</script>';
+            echo "<script>alert('Your input is too short..')</script>";
         }
     }
 
@@ -56,30 +58,33 @@ if(mysqli_num_rows($result) >0){
 
 }
 
-// function for deleting auser
+// function for temporarily deleting  user
 
 function delete_user($sql, $con, $user_id, $deleted_table_name){
     // $sql ="UPDATE user_tbl SET status = '$status' WHERE user_id = $user_id ";
 
-    $date = date("Y-m-d h:i:sa");
+    $date = date("Y-m-d h:i:s a");
     $result = mysqli_query($con, $sql);
     if($result){
-        echo "<script>alert('delete successfully...')</script>";
+        echo "<script>alert('Deleted successfully')</script>";
+
+
     }else{
-        echo "<scrpt>alert('Something went wrong...')</script>".mysqli_error($con);
+        echo "<scrpt>
+        alert('Your work has been saved')</script>".mysqli_error($con);
     
         
     }
 
     // first sellect all from table deleted user to check if the id already exist
-    $chech_id = "SELECT * FROM  $deleted_table_name WHERE id= '$user_id'";
+    $chech_id = "SELECT * FROM  $deleted_table_name WHERE user_id= '$user_id'";
     $result = mysqli_query($con, $chech_id);
-    if(mysqli_num_rows($result) == 0){
+    if(mysqli_num_rows($result) < 1){
 
         // then insert the id and date of the deleted person in to the table delete users
         $insert = "INSERT INTO $deleted_table_name (user_id, date) VALUES('$user_id', '$date')";
         mysqli_query($con, $insert);
-    }else if(mysqli_num_rows($result) == 1){
+    }else if(mysqli_num_rows($result) >= 1){
 
         // just update the time in the delete record tables
         $update_time = "UPDATE $deleted_table_name SET date = '$date' WHERE user_id = '$user_id'";
