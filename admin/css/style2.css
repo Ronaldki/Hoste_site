@@ -1,0 +1,32 @@
+.parent{
+    position: relative;
+    height: 100px;
+}
+.image_field{
+    position: absolute;
+    height: 100px;
+    
+}
+.inputimage{
+    z-index: 5;
+    /* background-color: black; */
+    height: 100px !important;
+    opacity: 0;
+
+}
+.input_image_overlay{
+    /* background-color: red; */
+    border: 3px dashed #6e6e6e;
+    z-index: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6e6e6e;
+    font-size: 20px;
+    text-transform: capitalize;
+
+}
+.text_area{
+    height: 100px!important;
+}

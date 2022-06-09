@@ -9,7 +9,7 @@ $sql = "SELECT user_id FROM user_tbl WHERE email = '$email' AND status = 'active
 
 $result = mysqli_query($con, $sql);
 if ($result) {
-    if (mysqli_num_rows($result) == 1) {
+    if (mysqli_num_rows($result) == 1){
     
     while ($rows = mysqli_fetch_assoc($result)) {
         $userId = $rows['user_id'];

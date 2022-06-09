@@ -7,6 +7,8 @@ include "../include/navbar.php";
            Navbar section.............
         -->
 <div id="layoutSidenav_content">
+
+<link rel="stylesheet" href="../admin/css/style2.css">
     <main>
         <div class="container-fluid px-4">
             <h3 class="mt-4"> Add Hostel</h3>
@@ -38,7 +40,7 @@ include "../include/navbar.php";
 
                 <h5 class="text-warning">If user Id is available, Add hostel Details</h5>
 
-                <form method='post'>
+                <form method='post' enctype="multipart/form-data">
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <div class="form-floating mb-3 mb-md-0">
@@ -52,9 +54,16 @@ include "../include/navbar.php";
                                 <label for="inputLastName">Hostel Name</label>
                             </div>
                         </div>
+                        <div class="col-md-6 w-100 mt-3 parent">
+                            <div class="form-floating w-100">
+                                <input name='hostelImage' class="image_field inputimage form-control w-100" id="inputLastName" type="file" placeholder="Enter Hostel name..." />
+                                <div class="image_field w-100 input_image_overlay">click to choose image</div>
+                                <!-- <label for="inputLastName">Hostel Name</label> -->
+                            </div>
+                        </div>
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control h-25" name= "hostelDescription"rows="10"></textarea>
+                        <textarea class="form-control text_area" name= "hostelDescription"rows="10"></textarea>
                         <label for="inputEmail">Description</label>
                     </div>
 

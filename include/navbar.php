@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../admin/css/sweetalert2.min.css">
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="../admin/js/sweetalert2.all.min.js"></script>
+    <link href="../admin/css/style2.css" rel="stylesheet" />
 
     <!-- <link rel="stylesheet" href="../admin/css/toggle.css"> -->
 <?php
@@ -80,8 +81,9 @@ if (!isset($_SESSION['login_id'])) {
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.php">Add Hostel</a>
-                                <a class="nav-link" href="layout-sidenav-light.php">Add Room</a>
+                                <a class="nav-link text-secondary" href="layout-static.php">Add Hostel</a>
+                                <a class="nav-link text-secondary" href="layout-sidenav-light.php">Add Room</a>
+                                <a class="nav-link text-secondary" href="hostel_images.php">Hostel image</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

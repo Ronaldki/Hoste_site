@@ -68,8 +68,8 @@ include "../include/navbar.php";
                                         </td>
                                         <td><?php echo $rows['date'] ?></td>
                                         <td class="justify-between">
-                                            <a href="?update=<?php echo $rows['user_id']; ?>"><i class="fas fa-recycle fa-2x"><?php echo $rows['user_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
-                                            <a href="?delete=<?php echo $rows['user_id']; ?>"><i class="fa fa-trash text-danger fa-2x"><?php echo $rows['user_id']; ?></i></a>
+                                            <a href="../admin/config/__delete_users_permanently.php?delete=''&update=<?php echo $rows['user_id']; ?>"><i class="fas fa-recycle"><?php echo $rows['user_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                                            <a href="../admin/config/__delete_users_permanently.php?update=''&delete=<?php echo $rows['user_id']; ?>"><i class="fa fa-trash text-danger"><?php echo $rows['user_id']; ?></i></a>
                                         </td>
                                     </tr>
                             <?php
@@ -102,38 +102,3 @@ include "../include/footer.php";
 </body>
 
 </html>
-<?php
-// include('./connect.php');
-$the_id = $_GET['delete']?$_GET['delete']:'';
-// echo $the_id;
-
-// enter the query for deleting users
-$sql = "DELETE  FROM user_tbl WHERE user_id ='$the_id' AND status = 'inactive'";
-$result = mysqli_query($con, $sql);
-
-if ($result) {
-    echo "<script>swal.fire(deleted successfully)</script>";
-    // echo "deletes";
-} else {
-    echo 'not done ' . mysqli_error($con);
-}
-
-?>
-
-<!-- to restore a temporarily deeted account -->
-<?php
-// include('./connect.php');
-$the_id = $_GET['update']?$_GET['update']:'';
-// echo $the_id;
-
-// enter the query for deleting users
-$sql = "UPDATE user_tbl SET status = 'active'  WHERE user_id ='$the_id'";
-$result = mysqli_query($con, $sql);
-
-if ($result) {
-    echo "<script>swal.fire(deleted successfully)</script>";
-} else {
-    echo 'not done ' . mysqli_error($con);
-}
-
-?>
