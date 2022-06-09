@@ -49,6 +49,6 @@ if (empty($hostelId) || empty($hostelNmame) || empty($hostelDescription || $host
             }
         }
     } else {
-        echo 'hhh' . mysqli_error($con);
+        echo 'Can not connect' . mysqli_error($con);
     }
 }

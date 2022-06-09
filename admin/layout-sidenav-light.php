@@ -25,15 +25,15 @@ include "../include/navbar.php";
                                 <?php
                                 $con = mysqli_connect("localhost", "root", "", "beacon_db");
                                 $rs = "SELECT * FROM hostel_tbl";
-                                
-                                $qry = mysqli_query($con,$rs );
+
+                                $qry = mysqli_query($con, $rs);
 
                                 ?>
                                 <select name="hostel" id="hostel" class="form-control input-group-lg">
                                     <?php
                                     while ($row = mysqli_fetch_assoc($qry)) {
                                     ?>
-                                        <option value="<?php echo $row['hostel_name']; ?>" name= "hostel"><?php echo $row['hostel_name']; ?></option>
+                                        <option value="<?php echo $row['hostel_name']; ?>" name="hostel"><?php echo $row['hostel_name']; ?></option>
                                     <?php
                                     } ?>
 
@@ -43,7 +43,7 @@ include "../include/navbar.php";
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input name='room_name' class="form-control" id="inputLastName" type="text" placeholder="Enter Room name..." />
+                                <input name='room_name' class="form-control" id="inputLastName" type="text" placeholder="Enter Room name..." required />
                                 <label for="inputLastName">Room Name</label>
                             </div>
                         </div>
@@ -53,15 +53,15 @@ include "../include/navbar.php";
                         <div class="col-md-6">
                             <div class="form-floating mb-3 mb-md-0">
                                 <select name="status" id="" class="form-control input-group-lg ">
-                                    <option value="Single" name="status"  required>Single</option>
-                                    <option value="Double" name="status"  required>Double</option>
+                                    <option value="Single" name="status" required>Single</option>
+                                    <option value="Double" name="status" required>Double</option>
                                 </select>
                                 <label for="inputFirstName">Status</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input name='fee' class="form-control" id="inputLastName" type="text" placeholder="Enter Fees" />
+                                <input name='fee' class="form-control" id="inputLastName" type="text" placeholder="Enter Fees" required />
                                 <label for="inputLastName">Fees</label>
                             </div>
                         </div>

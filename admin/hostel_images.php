@@ -1,14 +1,14 @@
 <?php
 ob_start();
 include "../include/navbar.php";
-include('./config/connect.php')
+include('./config/connect.php');
 ?>
 <!-- 
-           Navbar section.............
+    Navbar section.............
         -->
 <div id="layoutSidenav_content">
 
-<link rel="stylesheet" href="../admin/css/style2.css">
+    <link rel="stylesheet" href="../admin/css/style2.css">
     <main>
         <div class="container-fluid px-4">
             <h3 class="mt-4"> Add images</h3>
@@ -17,59 +17,59 @@ include('./config/connect.php')
 
                 <!-- <h5 class="text-warning">If user Id is available, Add hostel Details</h5> -->
 
-                <form method='post' enctype="multipart/form-data" >
+                <form method='post' enctype="multipart/form-data">
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <div class="form-floating mb-3 mb-md-0">
-                                <select name="hostel_name" class="form-control"id="" >       
+                                <select name="hostel_names" class="form-control" id="">
                                     <?php
-                                    $sql ="SELECT * FROM hostel_tbl";
+                                    $sql = "SELECT * FROM hostel_tbl";
                                     $res = mysqli_query($con, $sql);
-                                    while($row = mysqli_fetch_assoc($res)){?>
-                                        <option value="<?php echo $row['hostel_name'];?>" class="form-control"><?php echo $row['hostel_name'];?></option>
-                                        <?php
+                                    while ($row = mysqli_fetch_assoc($res)) { ?>
+                                        <option value="<?php echo $row['hostel_name']; ?>" class="form-control"><?php echo $row['hostel_name']; ?></option>
+                                    <?php
                                     }
-                                    
+
                                     ?>
 
                                 </select>
-                                <label for="inputFirstName">user Id</label>
+                                <label for="inputFirstName">Hostel</label>
                             </div>
                         </div>
                         <!-- <div class="col-md-6"> -->
-                            <div class="form-floating my-4">
-                               
-                               Single  <input type="radio" name="single_double" value="single"> &nbsp;
-                               Double <input type="radio" name="single_double" value="double">
-                                
-                                
-                            </div>
+                        <div class="form-floating my-4">
+
+                            Single <input type="radio" name="single_double" value="single"> &nbsp;
+                            Double <input type="radio" name="single_double" value="double">
+
+
+                        </div>
                         <!-- </div> -->
-                        
+
                         <div class="col-md-6 w-100 mt-3 parent">
                             <div class="form-floating w-100">
-                                <input name='hostelImage' class="image_field inputimage form-control w-100" id="inputLastName" type="file" placeholder="Enter Hostel name..." />
+                                <input name="hostelImage" class="image_field inputimage form-control w-100" id="inputLastName" type="file" placeholder="Enter Image" />
                                 <div class="image_field w-100 input_image_overlay">click to choose image</div>
                                 <!-- <label for="inputLastName">Hostel Name</label> -->
                             </div>
                         </div>
                     </div>
-                  
+
 
 
                     <div class="mt-4 mb-0">
-                        <div class="d-grid"><button class="btn-success" name='submit_hostel' type="submit">Create Account</button></div>
+                        <div class="d-grid"><button class="btn-success" name='btn_imgs' type="submit">Add Image</button></div>
                     </div>
                 </form>
             </div>
 
-                <?php
-                if(isset($_POST['submit_hostel'])){
-                        include("../admin/config/_add_hostel.php");
-                    
-                }
-                
-                ?>
+            <?php
+            if (isset($_POST['btn_imgs'])) {
+
+                include("../admin/config/__hostel_images.php");
+            }
+
+            ?>
 
         </div>
     </main>
