@@ -66,7 +66,9 @@ function delete_user($sql, $con, $user_id, $deleted_table_name){
     $date = date("Y-m-d h:i:s a");
     $result = mysqli_query($con, $sql);
     if($result){
-        echo "<script>alert('Deleted successfully')</script>";
+        // echo "<script>alert('Deleted successfully')</script>";
+        header('location:http://localhost/HostelApp/Hoste_site/admin/table_admin.php');
+
 
 
     }else{

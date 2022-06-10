@@ -11,8 +11,6 @@ include "../include/navbar.php";
     <main>
         <div class="container-fluid px-4">
             <h1 class="mt-4 text-secondary">Admins</h1>
-
-
             <?php
             include "../include/admin_user_list.php";
             ?>
