@@ -39,7 +39,7 @@ include('./config/connect.php');
                         <!-- <div class="col-md-6"> -->
                         <div class="form-floating my-4">
 
-                            Single <input type="radio" name="single_double" value="single"> &nbsp;
+                            Single <input type="radio" name="single_double" value="single" checked> &nbsp;
                             Double <input type="radio" name="single_double" value="double">
 
 

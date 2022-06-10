@@ -13,7 +13,7 @@ $result = mysqli_query($con, $sql);
 
 if ($result) {
     // echo "<script>swal.fire(deleted successfully)</script>";
-    header('location:http://localhost/HostelApp/Hoste_site/admin/all_deleted_users.php');
+    header('location:http://localhost/Hoste_site/Hoste_site/admin/all_deleted_users.php');
 } else {
     echo 'not done ' . mysqli_error($con);
 }
