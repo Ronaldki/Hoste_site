@@ -7,8 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--footer links -->
+<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'> -->
+<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'> -->
+      <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
+<!-- end of footer links -->
+
   <link rel="stylesheet" href="../user/css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
@@ -152,58 +159,165 @@
     </div>
   </section>
 
-  
+
   <!-- section for popular hostel -->
   <div class="h3 text-center mt-5">Popular Hostels</div>
   <hr class="w-25 bg-info">
   <div class="slider_hostel_p">
     <div class="owl-carousel owl-theme owl_contaioner  w-75 container-fluid mt-3">
-      <div class="item bg-secondary">
+      <!-- <div class="item bg-secondary">
         <h4>1</h4>
+      </div> -->
+
+      <!-- h5 title r header will pick hostel names from database -->
+      <!-- <h4>1</h4> -->
+      <div class=" item card card_outline" style="height: 19rem; ">
+        <div class="card-body py-2">
+          <img class="card-img-top" src="../admin/assets/img/testimonial-bg2.jpg" alt="Our image" height="150px">
+          <h5 class="card-title">Maisha</h5>
+          <p class="card-text">Some quick example text to build on the card title and.</p>
+          <a href="#" class="btn btn-primary ">More</a>
+        </div>
+        <br>
       </div>
-      <div class="item bg-danger">
-        <h4>2</h4>
+      <div class=" item card card_outline" style="height: 19rem; ">
+        <div class="card-body py-2">
+          <img class="card-img-top" src="../admin/uploads/IMG-62a1c41753bec.jpg" alt="Our image" height="150px">
+          <h5 class="card-title">BakoBlessed</h5>
+          <p class="card-text">Some quick example text to build on the card title and.</p>
+          <a href="#" class="btn btn-primary ">More</a>
+        </div>
+        <br>
       </div>
-      <div class="item bg-primary">
-        <h4>3</h4>
+      <div class=" item card card_outline" style="height: 19rem; ">
+        <div class="card-body py-2">
+          <img class="card-img-top" src="../admin/uploads/IMG-62a1c44221ca7.jpg" alt="Our image" height="150px">
+          <h5 class="card-title">Maisha</h5>
+          <p class="card-text">Some quick example text to build on the card title and.</p>
+          <a href="#" class="btn btn-primary ">More</a>
+        </div>
+        <br>
       </div>
-      <div class="item bg-danger">
-        <h4>4</h4>
+      <div class=" item card card_outline" style="height: 19rem; ">
+        <div class="card-body py-2">
+          <img class="card-img-top" src="../admin/uploads/IMG-62a1c46a497af.jpg" alt="Our image" height="150px">
+          <h5 class="card-title">St. Peter</h5>
+          <p class="card-text">Some quick example text to build on the card title and.</p>
+          <a href="#" class="btn btn-primary ">More</a>
+        </div>
+        <br>
       </div>
-      <div class="item primary">
-        <h4>5</h4>
+      <div class=" item card card_outline" style="height: 19rem; ">
+        <div class="card-body py-2">
+          <img class="card-img-top" src="../admin/uploads/IMG-62a204c0d1de7.png" alt="Our image" height="150px">
+          <h5 class="card-title">BlackRoof</h5>
+          <p class="card-text">Some quick example text to build on the card title and.</p>
+          <a href="#" class="btn btn-primary ">More</a>
+        </div>
+        <br>
       </div>
-      <div class="item bg-danger">
-        <h4>6</h4>
+      <div class=" item card card_outline" style="height: 19rem; ">
+        <div class="card-body py-2">
+          <img class="card-img-top" src="../admin//assets/img/testimonial-bg1.jpg" alt="Our image" height="150px">
+          <h5 class="card-title">Bako</h5>
+          <p class="card-text">Some quick example text to build on the card title and.</p>
+          <a href="#" class="btn btn-primary ">More</a>
+        </div>
+        <br>
       </div>
-      <div class="item">
-        <h4>7</h4>
+      <div class=" item card card_outline" style="height: 19rem; ">
+        <div class="card-body py-2">
+          <img class="card-img-top" src="../admin/uploads/IMG-62a204c0d1de7.png" alt="Our image" height="150px">
+          <h5 class="card-title">Maisha</h5>
+          <p class="card-text">Some quick example text to build on the card title and.</p>
+          <a href="#" class="btn btn-primary ">More</a>
+        </div>
+        <br>
       </div>
-      <div class="item bg-danger">
-        <h4>8</h4>
-      </div>
-      <div class="item">
-        <h4>9</h4>
-      </div>
-      <div class="item">
-        <h4>10</h4>
-      </div>
-      <div class="item">
-        <h4>11</h4>
-      </div>
-      <div class="item">
-        <h4>12</h4>
-      </div>
+
+      <!-- End of card -->
     </div>
   </div>
-  
-  
+  <!--start of the footer -->
+  <section>
+    <footer id="footer" class="footer-1 foo">
+      <div class="main-footer widgets-dark typo-light">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget subscribe no-box">
+                <h5 class="widget-title">Beacon<span></span></h5>
+                <p>We offer a number of services <span style="color:red ;">to our customers</span> </p>
+              </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title">Quick Links<span></span></h5>
+                <ul class="thumbnail-widget">
+                  <li>
+                    <div class="thumb-content"><a href="#.">&nbsp;Get Started</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="#.">&nbsp;Top Hostels</a></div>
+                  </li>
+                  <li>
+                </ul>
+              </div>
+            </div>
+
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title">Follow us<span></span></h5>
+                <a href="#"> <i class="fa fa-facebook"> </i> </a>
+                <a href="#"> <i class="fa fa-twitter"> </i> </a>
+                <a href="#"> <i class="fa fa-youtube"> </i> </a>
+              </div>
+            </div>
+            <br>
+            <br>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title">Contact Us<span></span></h5>
+                <p class="text-center" style="color: orange;">You can Connect with us</p>
+                <div class="emailfield">
+                  <input type="text" name="email" value="Email">
+                  <input type="text" name="message" placeholder="Comment">
+                  <!-- <input name="uri" type="hidden" value="arabiantheme"> -->
+                  <!-- <input name="loc" type="hidden" value="en_US"> -->
+                  <input class="submitbutton ripplelink" type="submit" value="Send">
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p>&copy; 2022. All rights reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+  </section>
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="../user/js/jquery-2.2.4.min.js"></script>
-<script src="../user/js/owl.carousel.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="../user/js/jquery-2.2.4.min.js"></script>
+  <script src="../user/js/owl.carousel.min.js"></script>
 
   <!-- ........................................................ -->
 
