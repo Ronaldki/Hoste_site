@@ -1,5 +1,9 @@
+body{
+    overflow-x: hidden;
+}
+
 a{
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .nav-icons{
@@ -18,11 +22,6 @@ a{
     margin-top: -8px;
     padding-left: 2px;
 
-}
-
-.iamge_courosel{
-    height: 20px;
-    overflow: hidden;
 }
 .slide_image_parent{
     position: relative;
@@ -250,4 +249,10 @@ color:white ;
 }
 #details_btn a{
     color: white;
+}
+.slider_hostel_p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
