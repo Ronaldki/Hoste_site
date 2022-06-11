@@ -5,6 +5,9 @@ body{
 a{
     text-decoration: none !important;
 }
+hr{
+    height: 3px;
+}
 
 .nav-icons{
     height: 30px;
