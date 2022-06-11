@@ -122,6 +122,202 @@
         </div>
     </section>
 
+
+    <!-- //hostel section -->
+
+    <div class="container">
+        <div class="row">
+          <!-- <div class="col-6">
+            <h3 class="mb-3">Carousel cards title</h3>
+          </div> -->
+          <!-- <div class="col-6 text-right">
+            <a
+              class="btn btn-primary mb-3 mr-1"
+              href="#carouselExampleIndicators2"
+              role="button"
+              data-slide="prev"
+            >
+              <i class="fa fa-arrow-left"></i>
+            </a>
+            <a
+              class="btn btn-primary mb-3"
+              href="#carouselExampleIndicators2"
+              role="button"
+              data-slide="next"
+            >
+              <i class="fa fa-arrow-right"></i>
+            </a>
+          </div> -->
+          <div class="col-12">
+            <div
+              id="carouselExampleIndicators2"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <img
+                          class="img-fluid"
+                          alt="Our Hostel"
+                          src="../admin/uploads/IMG-62a1b1fbb9e23.jpg"
+                          />
+                        <div class="card-body">
+                          <h4 class="card-title">Our Best Hostel</h4>
+                          <p class="card-text">
+                           Get The Very Best
+                          </p>
+                          <button class="btn btn-success">Book</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <img
+                          class="img-fluid"
+                          alt="100%x280"
+                          src="../admin/assets/img/testimonial-bg1.jpg"
+                        />
+                        <div class="card-body">
+                          <h4 class="card-title">Special title treatment</h4>
+                          <p class="card-text">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <img
+                          class="img-fluid"
+                          alt="100%x280"
+                          src="../admin/assets/img/testimonial-bg1.jpg"
+                        />
+                        <div class="card-body">
+                          <h4 class="card-title">Special title treatment</h4>
+                          <p class="card-text">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <img
+                          class="img-fluid"
+                          alt="100%x280"
+                          src="../admin/assets/img/testimonial-bg1.jpg"
+                        />
+                        <div class="card-body">
+                          <h4 class="card-title">Special title treatment</h4>
+                          <p class="card-text">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <img
+                          class="img-fluid"
+                          alt="100%x280"
+                          src="../admin/assets/img/testimonial-bg1.jpg"
+                        />
+                        <div class="card-body">
+                          <h4 class="card-title">Special title treatment</h4>
+                          <p class="card-text">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <img
+                          class="img-fluid"
+                          alt="100%x280"
+                          src="../admin/assets/img/testimonial-bg1.jpg"
+                        />
+                        <div class="card-body">
+                          <h4 class="card-title">Special title treatment</h4>
+                          <p class="card-text">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <img
+                          class="img-fluid"
+                          alt="100%x280"
+                          src="../admin/assets/img/testimonial-bg1.jpg"
+                        />
+                        <div class="card-body">
+                          <h4 class="card-title">Special title treatment</h4>
+                          <p class="card-text">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <img
+                          class="img-fluid"
+                          alt="100%x280"
+                          src="../admin/assets/img/testimonial-bg1.jpg"
+                        />
+                        <div class="card-body">
+                          <h4 class="card-title">Special title treatment</h4>
+                          <p class="card-text">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <img
+                          class="img-fluid"
+                          alt="100%x280"
+                          src="../admin/assets/img/testimonial-bg1.jpg"
+                        />
+                        <div class="card-body">
+                          <h4 class="card-title">Special title treatment</h4>
+                          <p class="card-text">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
