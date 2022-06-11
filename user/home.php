@@ -67,7 +67,7 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner">
+            <div class="carousel-inner iamge_courosel">
                 <!-- <div class="carousel-item active  ">
                     <img class="d-block w-100" height="500vh" src="../admin/assets/img/testimonial-bg1.jpg" alt="First slide">
                 </div> -->
@@ -81,7 +81,7 @@
 
                         </div>
                     </div>
-                    <img class="d-block w-100 slide_image " height="500vh" src="../admin/assets/img/testimonial-bg1.jpg" alt="Second slide">
+                    <img class="d-block w-100 slide_image " height="600px" src="../admin/assets/img/testimonial-bg1.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item slide_image_parent">
                     <div class="caption ">
@@ -93,7 +93,7 @@
 
                         </div>
                     </div>
-                    <img class="d-block w-100 slide_image " height="500vh" src="../admin/assets/img/testimonial-bg1.jpg" alt="Second slide">
+                    <img class="d-block w-100 slide_image " height="600px" src="../admin/assets/img/testimonial-bg1.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item slide_image_parent">
                     <div class="caption ">
@@ -105,7 +105,7 @@
 
                         </div>
                     </div>
-                    <img class="d-block w-100 slide_image " height="500vh" src="../admin/uploads/IMG-62a1c41753bec.jpg" alt="Second slide">
+                    <img class="d-block w-100 slide_image " height="600px" src="../admin/uploads/IMG-62a1c41753bec.jpg" alt="Second slide">
                 </div>
                 <!-- <div class="carousel-item">
                     <img class="d-block w-100 " height="500vh" src="../admin/assets/img/testimonial-bg1.jpg" alt="Third slide">
