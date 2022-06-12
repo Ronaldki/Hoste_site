@@ -7,16 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<!--footer links -->
-<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'> -->
-<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'> -->
-      <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- end of footer links -->
-
   <link rel="stylesheet" href="../user/css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
@@ -140,14 +132,174 @@
         </div>
       </div>
 
-     
+      <div class=" col-sm-5 col-ms-7 mt-3">
+        
+        <ul class="list-group">
+          <li class="list-group-item">
+            <div class="h4 text-primary text-center">Sort Hostel</div>
+
+          </li>
+          <li class="list-group-item">
+            <form class="form-inline ">
+              <div class="form-group mx-sm-3 mb-2">
+                <input type="number" class="form-control" id="inputPassword2" placeholder="min price">
+              </div>
+              <div class="form-group mx-sm-3 mb-2">
+                <input type="number" class="form-control" id="inputPassword2" placeholder="max price">
+              </div>
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </form>
+
+          </li>
+          <li class="list-group-item">
+            <a href="" class="p-2 text-secondary w-100" style="text-decoration:none ;">Single Rooms</a>
+
+          </li>
+          <li class="list-group-item">
+            <a href="" class=" p-2 text-secondary w-100" style="text-decoration:none ;">Double Rooms</a>
+
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
 
   <!-- section for popular hostel -->
- 
-  <!--start of the footer -->
+  <div class="h3 text-center mt-5">Popular Hostels</div>
+  <hr class="w-25 bg-info">
+  <div class="slider_hostel_p">
+    <div class="owl-carousel owl-theme owl_contaioner  w-75 container-fluid mt-3">
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c44221ca7.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c4ab77e78.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <!-- <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+
+
+  <!--  -->
+  <!-- section for displaying all hotels -->
+  <section>
+    <div class="h4 text-center my-3 text-primary">GET ALL HOSTELS</div>
+    <hr class="w-25 bg-danger">
+    <div class="all_hostel_container px-5 my-5">
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c44221ca7.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c46a497af.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+      <div class="card_container">
+        <div class="cards">
+          <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
+          <div class="card_hostel_name"> BAKO BLESS</div>
+          <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
+        </div>
+      </div>
+     
+     
+  
+    </div>
+  </section>
+
+  <!-- the footer  -->
   <section>
     <footer id="footer" class="footer-1 foo">
       <div class="main-footer widgets-dark typo-light">
@@ -221,10 +373,11 @@
         </div>
     </footer>
   </section>
+  
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="../user/js/jquery-2.2.4.min.js"></script>
   <script src="../user/js/owl.carousel.min.js"></script>
