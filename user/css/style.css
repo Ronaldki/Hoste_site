@@ -1,9 +1,13 @@
 body{
     overflow-x: hidden;
+    background-color: #f2f2f2 !important;
 }
 
 a{
     text-decoration: none !important;
+}
+hr{
+    height: 3px !important;
 }
 
 .nav-icons{
@@ -160,9 +164,23 @@ a{
 
 .hostel_crdentials{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     color: rgb(59, 58, 58);
     
+}
+.detail_wrapper{
+    display: flex;
+}
+.table_head, .describe{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 120px;
+    color: #888;
+    
+    
+}
+.detail_value{
+    font-size: 22px;
+    color: #888;
 }
 .hostel_crdentials .describe{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -211,6 +229,9 @@ a{
 .card .card_datails{
    margin-left: 15px;
 }
+.card .card_datails div{
+   color: #888;
+}
 
 .action{
     position: relative;
@@ -255,4 +276,81 @@ color:white ;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+
+/*  */
+/* stylings for the cars that displays the hostels */
+.all_hostel_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid: 30px;
+    padding:10px;
+    margin: 20px 20px;
+    
+    
+}
+
+.card_container{
+    box-sizing: border-box;
+    margin: 10px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+
+ 
+}
+.card_container:hover{
+    box-shadow: 1px 2px 5px;
+    
+}
+.card_container .cards{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+ 
+}
+.card_container .cards .image{
+    width: 100%;
+    transition: .2s;
+    overflow: hidden;
+}
+.card_container .cards .image:hover img{
+    transform: scale(1.1);
+    transition: .2s;
+
+ 
+}
+.card_container .cards .image img{
+    width: 100%;
+    height: 300px;
+ 
+}
+
+.card_hostel_name{
+text-align: center;
+font-family: cursive;
+padding: 10px;
+color: #333;
+background-color: rgb(219, 219, 219);
+
+}
+.view_hostel_details_btn{
+    background-color: orange;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 5px 40px;
+    color: white;
+    margin: 0px 0px;
+    width: 100%;
+    position: relative;
+}
+.view_hostel_details_btn:hover{
+    background-color: rgb(99, 65, 2);
+ 
+}
+.view_hostel_details_btn a{
+    width: 100%;
+    height: 100%;
+    color: white;
 }
