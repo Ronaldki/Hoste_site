@@ -1,163 +1,167 @@
-<<<<<<< HEAD
 body{
     overflow-x: hidden;
     background-color: #f2f2f2 !important;
-=======
-body {
-  overflow-x: hidden;
->>>>>>> 5e9f7f0e1b03802cc6dcc634337694638a8cae5c
 }
 
-a {
-  text-decoration: none !important;
-}
-hr {
-  height: 3px;
+a{
+    text-decoration: none !important;
 }
 hr{
     height: 3px !important;
 }
 
-.nav-icons {
-  height: 30px;
-  width: 50px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.nav-icons{
+    height: 30px;
+    width: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
-.nav-icons span {
-  margin-top: -8px;
-  padding-left: 2px;
+.nav-icons span{
+    
+    margin-top: -8px;
+    padding-left: 2px;
+
 }
-.slide_image_parent {
-  position: relative;
+.slide_image_parent{
+    position: relative;
+
 }
-.dim_backgroud {
-  overflow: hidden;
+.dim_backgroud{
+    overflow: hidden;
 }
-.caption,
-.caption_wrapper {
-  background: rgba(0, 0, 0, 0.4) !important;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.caption, .caption_wrapper{
+    background: rgba(0, 0, 0, 0.4) !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
-.caption p {
+.caption p{
   font-family: cursive;
   font-style: italic;
   text-transform: capitalize;
-}
-.caption h2 {
-  color: orange;
-  padding: 5px;
-  text-transform: capitalize;
-  text-align: center;
-}
-.caption button {
-  border: 1px solid orange;
-  padding: 10px;
-  text-transform: capitalize;
-  text-align: center;
-  border-radius: 60px;
 
-  background: rgba(0, 0, 0, 0.5);
 }
-.caption button:hover {
-  /* border: 1px solid orange; */
-  padding: 10px;
-  text-transform: capitalize;
-  text-align: center;
-  border-radius: 60px;
-  background-color: orange;
+.caption h2{
+   color: orange;
+   padding: 5px;
+   text-transform: capitalize;
+   text-align: center;
+
 }
-.caption button a {
-  text-transform: capitalize;
-  text-decoration: none;
-  color: #f2f2f2;
+.caption button{
+   border: 1px solid orange;
+   padding: 10px;
+   text-transform: capitalize;
+   text-align: center;
+   border-radius: 60px;
+   
+   background:rgba(0, 0, 0, 0.5)  ;
+   
+
 }
-.slide_image {
-  /* position: absolute; */
+.caption button:hover{
+   /* border: 1px solid orange; */
+   padding: 10px;
+   text-transform: capitalize;
+   text-align: center;
+   border-radius: 60px;
+   background-color: orange;
+   
+}
+.caption button a{
+   text-transform: capitalize;
+   text-decoration: none;
+   color: #f2f2f2
+   
+}
+.slide_image{
+/* position: absolute; */
 }
 
 /* stylings for the hostel details  */
-.hostel_body {
-  background-color: #f1f1f1;
-  padding: 30px 10px;
+.hostel_body{
+    background-color: #f1f1f1;
+    padding: 30px 10px;
 }
-.header_div {
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header_div{
+   
+    align-items: center;
+    justify-content: center;
+     flex-direction: column;
+     display: flex;
+     align-items: center;
+     justify-content: center;
 }
-.header_div h3 {
-  color: #333;
-  text-transform: capitalize;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.header_div h3{
+    color: #333;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-#small_hr {
-  height: 5px;
-  border-radius: 10px;
-  width: 200px;
-  background-color: orangered;
-  margin-top: -5px;
+#small_hr{
+    height: 5px;
+    border-radius: 10px;
+    width: 200px;
+    background-color:orangered;
+    margin-top: -5px;
 }
 
 /* stylings for the hostel_detail_container */
-.hostel_detail_container {
-  display: flex;
-  margin: 20px 0px;
+.hostel_detail_container{
+    display: flex;
+    margin: 20px 0px;
 }
-.hostel_detail_container .hostel_image {
-  background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 30%;
-  height: 450px;
-  margin-right: 10px;
+.hostel_detail_container .hostel_image{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    height: 450px;
+    margin-right: 10px;
+    
 }
-.hostel_detail_container .hostel_image img {
-  width: 100%;
-  height: 100%;
+.hostel_detail_container .hostel_image img{
+    width: 100%;
+    height: 100%;
+    
 }
-.hostel_details {
-  /* background-color: red; */
-  width: 70%;
-  margin-left: 10px;
-  position: relative;
+.hostel_details{
+    /* background-color: red; */
+    width: 70%;
+    margin-left: 10px;
+    position: relative;
 }
-.hostel_details .user_image {
-  position: absolute;
-  right: 10px;
+.hostel_details .user_image{
+    position: absolute;
+    right: 10px;
+    
 }
-.hostel_details img {
-  border: 2px solid rgb(139, 139, 139);
-  width: 100px;
-  height: 90px;
-  border-radius: 10px;
+.hostel_details img{
+    border: 2px solid rgb(139, 139, 139);
+    width: 100px;
+    height: 90px;
+    border-radius: 10px;
 }
-.hostel_details .name {
-  color: rgb(139, 139, 139);
-  font-family: cursive;
-  text-transform: capitalize;
+.hostel_details .name{
+   color: rgb(139, 139, 139);
+   font-family: cursive;
+   text-transform: capitalize;
 }
 
-<<<<<<< HEAD
 .hostel_crdentials{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* text-transform: capitalize; */
@@ -182,116 +186,91 @@ hr{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 60px;
     text-transform: capitalize;
-=======
-.hostel_crdentials {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-transform: capitalize;
-  color: rgb(59, 58, 58);
-}
-.hostel_crdentials .describe {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 60px;
-  text-transform: capitalize;
-}
->>>>>>> 5e9f7f0e1b03802cc6dcc634337694638a8cae5c
 
+}
+ 
 /* styling for the room cards*/
-.rooms {
-  text-align: center;
+.rooms{
+    text-align: center;
 }
-.roomsavailable {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  grid-gap: 20px;
+.roomsavailable{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-gap: 20px;
+
 }
 
-.rooms {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.rooms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-.rooms hr {
-  height: 5px;
-  border-radius: 10px;
-  width: 200px;
-  background-color: orangered;
-  margin-top: -5px;
-  margin-bottom: 20px;
+.rooms hr{
+    height: 5px;
+    border-radius: 10px;
+    width: 200px;
+    background-color:orangered;
+    margin-top: -5px;
+    margin-bottom: 20px;
 }
 
-.card {
-  display: flex !important;
-  flex-direction: row;
-  background-color: #fff;
+.card{
+    display: flex !important;
+    flex-direction: row;
+    background-color: #fff;
+
 }
-.card:hover {
-  box-sizing: border-box;
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
+.card:hover{
+    box-sizing: border-box;
+   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
+
 }
-.card .card_datails {
-  margin-left: 15px;
+.card .card_datails{
+   margin-left: 15px;
 }
 .card .card_datails div{
    color: #888;
 }
 
-.action {
-  position: relative;
+.action{
+    position: relative;
 }
-.card .card_datails .action button {
-  padding: 5px 10px;
-  background-color: #fff;
-  margin-top: 30px;
+.card .card_datails .action button{
+   padding: 5px 10px;
+   background-color: #fff;
+margin-top: 30px;
 }
-.card .card_datails .action button a {
-  text-decoration: none;
+.card .card_datails .action button a{
+text-decoration: none;
 }
-#book_btn {
-  border: 1px solid orange;
-  /* background-color: red; */
-  color: white;
+#book_btn{
+border: 1px solid orange;
+/* background-color: red; */
+color:white ;
+
 }
-#book_btn:hover {
-  background-color: orange;
-  color: white;
+#book_btn:hover{
+background-color: orange;
+color:white ;
+
 }
 
-#details_btn {
-  border: 1px solid teal;
-  background-color: teal;
-  color: white;
+#details_btn{
+    border: 1px solid teal;
+    background-color: teal;
+    color: white;
 }
-#details_btn:hover {
-  background-color: white;
-  color: white;
+#details_btn:hover{
+    background-color:white;
+    color: white;
 }
-#details_btn:hover a {
-  color: teal;
+#details_btn:hover a{
+    color: teal;
 }
-#details_btn a {
-  color: white;
+#details_btn a{
+    color: white;
 }
-.slider_hostel_p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.card_outline {
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-}
-
-.card_outline img {
-  transition: transform 0.2s;
-}
-.card_outline img:hover {
-  -ms-transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  transform: scale(1.5);
-}
-<<<<<<< HEAD
 .slider_hostel_p{
     display: flex;
     align-items: center;
@@ -375,5 +354,3 @@ background-color: rgb(219, 219, 219);
     height: 100%;
     color: white;
 }
-=======
->>>>>>> 5e9f7f0e1b03802cc6dcc634337694638a8cae5c
