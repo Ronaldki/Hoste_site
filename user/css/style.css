@@ -179,7 +179,7 @@ hr{
     
 }
 .detail_value{
-    font-size: 22px;
+    font-size: 15px;
     color: #888;
 }
 .hostel_crdentials .describe{
@@ -287,9 +287,16 @@ color:white ;
     grid: 30px;
     padding:10px;
     margin: 20px 20px;
-    
-    
+    min-height: 300px !important;   
 }
+.error_icon{
+    position: absolute;
+}
+.div{
+    background-color: red;
+    width: 70%;
+}
+
 
 .card_container{
     box-sizing: border-box;

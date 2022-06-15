@@ -25,10 +25,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home </a>
+            <a class="nav-link" href="index.php">Home </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Hostels</a>
+            <a class="nav-link" href="#all_hostel">Hostels</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -46,9 +46,9 @@
 
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0" action="search_hostel.php?" method="GET">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search </button>
         </form>
         <a class="nav-link " href="#"><i class="fa fa-shopping-cart text-light">Booked</i> </a>
         <div class="btmessage">
@@ -58,6 +58,9 @@
           </a>
 
         </div>
+
+
+       
       </div>
     </nav>
   </section>

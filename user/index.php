@@ -36,7 +36,7 @@ include "../admin/config/connect.php";
 
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="../admin/assets/img/testimonial-bg1.jpg" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="" alt="Second slide">
       </div>
       <div class="carousel-item slide_image_parent">
         <div class="caption ">
@@ -68,7 +68,7 @@ include "../admin/config/connect.php";
   <div class="row px-1">
 
     <div class=" col-sm-7 mt-2">
-      <div class="pr-3 bg-danger">
+      <div class="p-3 shadow-sm mt-2 mb-5 bg-white rounded ">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat consectetur sed sint?
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente fugiat et labore a nostrum distinctio blanditiis consectetur, reprehenderit quod dicta, doloribus itaque voluptatum quibusdam nihil totam voluptatem ad odio quas eius earum quisquam iste, dolorem deserunt! Earum vitae tempora saepe dolorum! Maiores iusto velit deserunt doloribus. Totam aut praesentium eos officia! Modi, dolorem deleniti fugit commodi earum, accusamus iusto maiores itaque atque, ipsa culpa perferendis quod animi. Vitae ipsum nisi ea, consectetur recusandae doloribus autem voluptates officia. Deserunt qui inventore soluta esse, perspiciatis aperiam similique animi maiores ex, impedit nobis ipsum totam explicabo harum nostrum sit quasi? Consequatur, nemo dicta?
       </div>
@@ -145,7 +145,7 @@ include "../admin/config/connect.php";
 
 <!--  -->
 <!-- section for displaying all hotels -->
-<section>
+<section id="all_hostel">
   <div class="h4 text-center my-3 text-primary">GET ALL HOSTELS</div>
   <hr class="w-25 bg-danger">
   <div class="all_hostel_container px-5 my-5">
@@ -176,63 +176,7 @@ include "../admin/config/connect.php";
             </div>";
     }
     ?>
-    <!-- <div class="card_container">
-      <div class="cards">
-        <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
-        <div class="card_hostel_name"> BAKO BLESS</div>
-        <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
-      </div>
-    </div>
-    <div class="card_container">
-      <div class="cards">
-        <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c44221ca7.jpg" alt=""></a>
-        <div class="card_hostel_name"> BAKO BLESS</div>
-        <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
-      </div>
-    </div>
-    <div class="card_container">
-      <div class="cards">
-        <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c46a497af.jpg" alt=""></a>
-        <div class="card_hostel_name"> BAKO BLESS</div>
-        <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
-      </div>
-    </div>
-    <div class="card_container">
-      <div class="cards">
-        <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
-        <div class="card_hostel_name"> BAKO BLESS</div>
-        <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
-      </div>
-    </div>
-    <div class="card_container">
-      <div class="cards">
-        <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
-        <div class="card_hostel_name"> BAKO BLESS</div>
-        <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
-      </div>
-    </div>
-    <div class="card_container">
-      <div class="cards">
-        <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
-        <div class="card_hostel_name"> BAKO BLESS</div>
-        <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
-      </div>
-    </div>
-    <div class="card_container">
-      <div class="cards">
-        <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
-        <div class="card_hostel_name"> BAKO BLESS</div>
-        <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
-      </div>
-    </div>
-    <div class="card_container">
-      <div class="cards">
-        <a href="./hostel_detail.html" class="image"><img src="../admin/uploads/IMG-62a1c41753bec.jpg" alt=""></a>
-        <div class="card_hostel_name"> BAKO BLESS</div>
-        <div class="view_hostel_details_btn"> <a href="./hostel_detail.html"> View Details >>></a></div>
-      </div>
-    </div> -->
-
+   
   </div>
 </section>
 
