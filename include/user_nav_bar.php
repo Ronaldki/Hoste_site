@@ -1,7 +1,9 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  
+  <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +32,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#all_hostel">Hostels</a>
           </li>
-
+          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Services
@@ -43,24 +45,79 @@
             </div>
           </li>
           <li class="nav-item">
+            
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="search_hostel.php?" method="GET">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search </button>
+          </form>
+        <a class="nav-link " href="#"><i class="fa fa-shopping-cart text-light">Booked</i> </a>
 
+        
+        <?php
+        $con = mysqli_connect("localhost", "root", "", "beacon_db");
+        
+        $query = mysqli_query($con, "SELECT * FROM message_tbl WHERE status= 0");
+        $count = mysqli_num_rows($query);
+        
+        ?>
+
+<ul class="navbar-nav mr-5">
+  <!-- <i class="fa fa-envelope"></i> -->
+  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle notification" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <!-- Inbox -->
+      
+      <i class="fa fa-envelope text-white w-6"></i><span class="badge badge-danger"><?php echo $count; ?></span>
+    </a>
+    
+    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+      <?php
+              $query2 = mysqli_query($con, "SELECT * FROM message_tbl WHERE status= 0");
+
+              if (mysqli_num_rows($query2) > 0) {
+                
+                while ($row = mysqli_fetch_assoc($query2)) {
+                  
+                  echo '<a class="dropdown-item text-primary" href="#">' . $row['text'] . '</a>';
+                  // echo '<a class="dropdown-item text-primary" href="../read_message.php?id=' . $row['id'] . ' ">' . $row['text'] . '</a>';
+                  echo '<div class="dropdown-divider"></div>';
+                }
+              } else {
+
+                echo '<a class="dropdown-item text-danger font-weight-bold" href="#"> <i class="fas fa-frown-open"></i>No Message</a>';
+              }
+              ?>
+
+
+            </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="search_hostel.php?" method="GET">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search </button>
-        </form>
-        <a class="nav-link " href="#"><i class="fa fa-shopping-cart text-light">Booked</i> </a>
-        <div class="btmessage">
-          <a class="nav-link nav-icons" href="#">
-            <i class="fa fa-envelope"></i>
-            <span class="text-danger ">3</span>
-          </a>
 
-        </div>
-
-
-       
       </div>
     </nav>
   </section>
+  
+  <script>
+    $(document).ready(function(){
+      
+      $("#navbarDropdown").on("click", function(){
+        // console.log("Success");
+        $.ajax({
+          url: "read_message.php",
+          success: function(rsl){
+            console.log(rsl);
+          }
+        });
+        
+      });
+    });
+  </script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  </body>
+  <?php
+include '../include/read_message.php';
+?>
