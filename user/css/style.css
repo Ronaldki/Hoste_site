@@ -130,19 +130,18 @@ hr{
     margin: 20px 0px;
 }
 .hostel_detail_container .hostel_image{
-    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 30%;
-    height: 450px;
+    width: 50%;
+    height: 800px;
     margin-right: 10px;
     
 }
 .hostel_detail_container .hostel_image img{
     width: 100%;
-    height: 100%;
+    height: 80%;
     
 }
 .hostel_details{
@@ -287,6 +286,12 @@ color:white ;
 
 /*  */
 /* stylings for the cars that displays the hostels */
+#all_hostel{
+    position: relative;
+    width: 70%;
+    margin: 100px auto;
+}
+
 .all_hostel_container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -368,3 +373,26 @@ background-color: rgb(219, 219, 219);
     height: 100%;
     color: white;
 }
+
+/* the room details stylings */
+/* the room details stylings */
+/* the room details stylings */
+/* the room details stylings */
+/* the room details stylings */
+/* the room details stylings */
+.image_wrapper{
+    width: 100%;
+   display: flex;
+    bottom: 0;
+    height: 200px;
+}
+.image_wrapper img{
+    width: 25%;
+    height: 200px !important;
+    margin: 0px !important;
+}
+ .owl-prev{
+     font-size: 30px;
+ }
+
+
