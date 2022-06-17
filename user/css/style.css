@@ -10,7 +10,7 @@ hr{
     height: 3px !important;
 }
 
-.nav-icons{
+/* .nav-icons{
     height: 30px;
     width: 50px;
     border-radius: 10px;
@@ -20,11 +20,17 @@ hr{
     align-items: center;
     justify-content: center;
     position: relative;
+} */
+.fa-bell{
+    position: relative;
 }
-.nav-icons span{
+.notificationicon{
     
-    margin-top: -8px;
+    margin-top: -3px !important;
     padding-left: 2px;
+    position: absolute;
+
+    /* padding-top: 20px; */
 
 }
 .slide_image_parent{
