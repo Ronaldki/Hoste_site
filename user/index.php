@@ -24,31 +24,31 @@ include "../admin/config/connect.php";
 
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="../admin/assets/img/testimonial-bg1.jpg" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="../admin/uploads/IMG-62a621083d1cc.jpg" alt="Second slide">
       </div>
       <div class="carousel-item slide_image_parent">
         <div class="caption ">
           <div class="caption_wrapper">
             <p class="text-light"> get your best hostel here... </p>
             <h2> on beacon hostel </h2>
-
+            
             <button class="view_hostel text-light"><a href="">get your hostel</a></button>
-
+            
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="../admin/uploads/IMG-62a5e08946d18.jpg" alt="Second slide">
       </div>
       <div class="carousel-item slide_image_parent">
         <div class="caption ">
           <div class="caption_wrapper">
             <p class="text-light">wish you nice stay... </p>
             <h2> in our hostel </h2>
-
+            
             <button class="view_hostel text-light"><a href="">get your hostel</a></button>
-
+            
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="../admin/uploads/IMG-62a1c41753bec.jpg" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="../admin/uploads/IMG-62a629e90e1ff.jpg" alt="Second slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -60,6 +60,31 @@ include "../admin/config/connect.php";
       <span class="sr-only">Next</span>
     </a>
   </div>
+</section>
+<section class="container-fluid">
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
 
 <section class=" container-fluid mt-5">
