@@ -11,15 +11,12 @@ include "../admin/config/connect.php";
 
 <!--  -->
 <!-- section for displaying all hotels -->
-<section id="teset">
-  <div class="h4 text-center my-3 text-primary">GET ALL HOSTELS</div>
+<section id="all_hostel">
+  <div class="h4 text-center my-3 text-primary">SEARCH RESULT</div>
   <hr class="w-25 bg-danger">
   <div class="all_hostel_container px-5 my-5">
 
-
-
     <?php
-    
     $search = $_GET['search'];
     $sql = "SELECT * FROM hostel_tbl WHERE hostel_name LIKE '%$search%' OR hostel_description LIKE '%$search%' ";
     $result = mysqli_query($con, $sql);

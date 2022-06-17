@@ -18,8 +18,7 @@ if ($result2) {
 } else {
     echo mysqli_error($con);
 }
-//    $row = mysqli_fetch_assoc($result2);
-//    echo $row;
+
 
 ?>
 
@@ -29,7 +28,7 @@ if ($result2) {
         <hr id="small_hr">
 
     </div>
-    <a href="./home.php" class="back text-light bg-primary py-2 px-3 ">&leftarrow; Back</a>
+    <a href="./index.php" class="back text-light bg-primary py-2 px-3 ">&leftarrow; Back</a>
     <div class="hostel_detail_container">
 
         <div class="hostel_image">
@@ -53,8 +52,9 @@ if ($result2) {
                 <p class="name"><?php echo trim($row['fname']) . " " . trim($row['lname']); ?></p>
                 <button class="btn back text-light bg-primary py-2  px-3">write to <?php echo $row['fname'] . " " . $row['lname']; ?></button>
 
-
             </div>
+             
+           
 
             <div class="hostel_crdentials">
                 <!-- <p>prize: <span>ugx. 300000</span></p> -->
@@ -107,7 +107,7 @@ if ($result2) {
                     <div class="prize">Ugx: <?php echo trim($row['room_fee']);?></div>
                     <div class="action">
                         <button id="book_btn"><a href="">Book</a></button>
-                        <button id="details_btn"><a href="hostel_id=<?php echo trim($row['hostel_id']);?>&room_id=<?php echo trim($row['room_id']);?>">View Detail...</a></button>
+                        <button id="details_btn"><a href="room_details.php">View Detail...</a></button>
                     </div>
                 </div>
     

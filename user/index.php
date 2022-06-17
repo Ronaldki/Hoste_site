@@ -110,8 +110,8 @@ include "../admin/config/connect.php";
 <!-- section for popular hostel -->
 <div class="h3 text-center mt-5">Popular Hostels</div>
 <hr class="w-25 bg-info">
-<div class="slider_hostel_p">
-  <div class="owl-carousel owl-theme owl_contaioner  w-75 container-fluid mt-3">
+<div class="">
+  <div class="the_four_scralling_cards owl-carousel owl-theme owl_contaioner  w-75 container-fluid mt-3">
 
   <?php
     
@@ -145,15 +145,13 @@ include "../admin/config/connect.php";
 
 <!--  -->
 <!-- section for displaying all hotels -->
+
 <section id="all_hostel">
   <div class="h4 text-center my-3 text-primary">GET ALL HOSTELS</div>
   <hr class="w-25 bg-danger">
-  <div class="all_hostel_container px-5 my-5">
-
-
-    <?php
-    
-
+  <div class="all_hostel_container px-5 my-5 w-75">
+  
+  <?php
     $sql = "SELECT * FROM user_tbl, hostel_tbl WHERE user_tbl.user_id = hostel_tbl.user_id";
     $result = mysqli_query($con, $sql);
     if (mysqli_num_rows($result) > 0) {
@@ -187,7 +185,6 @@ include "../include/user_footer.php";
 
 <!-- ........................................................ -->
 
-<script src="../user/js/index.js"></script>
 </body>
 
 </html>
