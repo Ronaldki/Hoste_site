@@ -11,10 +11,9 @@ if(!$con){
 
 // this is the function for frgistering all users
 function registerusers($fname, $lname, $type, $phone, $email, $password, $confirm_password, $status, $con){
-?>
 
 
-<?php
+
 // .........CHECHING IF USER HAS NO ACCOUNT YET............
 $sql = "SELECT  * FROM user_tbl WHERE email = '$email' AND type = '$type' ";
 $result = mysqli_query($con, $sql);
@@ -38,7 +37,7 @@ if(mysqli_num_rows($result) >0){
          $res = mysqli_query($con, $sql);
          if($res){
              header('location: home.php');
-             echo "<script>alert('oppps')</script>";
+
              
             }else{
                 echo "<script>
@@ -57,6 +56,61 @@ if(mysqli_num_rows($result) >0){
 }
 
 }
+
+
+
+
+function registerClientusers($fname, $lname, $type, $phone, $email, $password, $confirm_password, $status, $con){
+
+
+
+
+// .........CHECHING IF USER HAS NO ACCOUNT YET............
+$sql = "SELECT  * FROM user_tbl WHERE email = '$email' AND type = '$type' ";
+$result = mysqli_query($con, $sql);
+if(mysqli_num_rows($result) >0){
+    echo "<script>alert( 'This email is already in use...')</script>";
+    // $err = 'Email already exist...';
+}else{
+    
+    // check if password matches confirm password.
+    if($password!= $confirm_password){
+        echo "<script>alert('Password not matching..')</script>";
+        
+    }else{
+        if(strlen($fname)>2 && strlen($lname)>2 && strlen($password)>3){
+            $hash_password = password_hash($password, PASSWORD_DEFAULT);
+            
+            // INSERT THE  user record into the database
+            $sql = "INSERT INTO user_tbl (fname, lname, type, phone, email, image, password, status)
+                    VALUE('$fname', '$lname', '$type', '$phone', '$email','', '$hash_password','$status')";
+         
+         $res = mysqli_query($con, $sql);
+         if($res){
+            header('location: login.php');
+
+             
+            }else{
+                echo "<script>
+                alert('Something went wrong')</script>";
+            }
+            
+
+        }else{
+
+            // throw error
+            echo "<script>alert('Your input is too short..')</script>";
+        }
+    }
+
+
+}
+
+}
+
+
+
+
 
 // function for temporarily deleting  user
 

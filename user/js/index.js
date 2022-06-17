@@ -26,7 +26,7 @@ $(document).ready(function(){
     $('.image_wrapper').owlCarousel({
         loop:true,
         margin:0,
-        nav:true,
+        // nav:true,
         autoplay:true,
         autoplayTimeout:8000,
         responsive:{
