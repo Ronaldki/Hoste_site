@@ -75,7 +75,5 @@ include "../include/user_footer.php";
 
 ?>
 
-</body>
-<script src="./js/room_deetail.js"></script>
 
-</html>
+<script src="./js/room_deetail.js"></script>
