@@ -9,7 +9,7 @@ if (isset($_POST['btn_imgs'])) {
     $ima_exe =  strtolower(pathinfo($hostelImage, PATHINFO_EXTENSION));
 
     $new_name =  'IMG-' . uniqid() . "." . $ima_exe;
-    move_uploaded_file($temp_name, "uploads/" . $new_name);
+    move_uploaded_file($temp_name, "upload/" . $new_name);
     // $himage = $_POST['hostelImage'];
     // $tmp_name = $_FILES();
     if (empty($state) || empty($hostelImage)) {

@@ -24,7 +24,7 @@ $(document).ready(function(){
 // the slider hostel details
 $(document).ready(function(){
     $('.image_wrapper').owlCarousel({
-        loop:true,
+        // loop:true,
         margin:0,
         // nav:true,
         autoplay:true,
