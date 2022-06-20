@@ -137,6 +137,7 @@ if ($result2) {
                         <div class="action">
                             <button id="book_btn"><a href="">Book</a></button> &nbsp; &nbsp;
                             <button id="details_btn"><a href="room_details.php?hostel_name=<?php echo trim($row["room_name"])?>&hostel_id=<?php echo trim($row["hostel_id"])?>&image_status=<?php echo trim($row["status"])?>">View Detail...</a></button>
+                            <!--  -->
                         </div>
                     </div>
 
