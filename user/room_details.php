@@ -92,8 +92,19 @@ include "../admin/config/connect.php";
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel"><b> Book from here</b></h5>
-                                    <h5 class="text-right">Welcome.......name</h5>
-                                    <button type="button" class="btn btn-danger btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                                    <!-- <h5 class="text-right">Welcome</h5> -->
+                                    <p>
+                                        <?php
+                                        if(isset($_SESSION['login_id'])){
+                                           echo "<h4 class='text-success '>Procede To Book</h4>";
+                                            
+                                        }
+                                        else{
+                                            echo ' <a href="login.php">Please Login</a>';
+                                        }
+                                        ?>
+                                    </p>
+                                    <!-- <button type="button" class="btn btn-danger btn-close" data-bs-dismiss="modal" aria-label="Close">X</button> -->
                                 </div>
                                 <div class="modal-body">
                                     <form>
@@ -103,7 +114,7 @@ include "../admin/config/connect.php";
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Booking Fees:</label>
-                                            <input type="text" class="form-control" id="recipient-name" placeholder="Fees">
+                                            <input type="number" class="form-control" id="recipient-name" placeholder="Fees">
                                         </div>
                                         <div class="mb-3">
                                             <label for="message-text" class="col-form-label">Room Description:</label>

@@ -1,7 +1,11 @@
 <?php
 include "../include/user_nav_bar.php";
 include "../admin/config/connect.php";
+
+
 ?>
+
+
 
 <section class="">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
