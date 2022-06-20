@@ -127,6 +127,7 @@ include "../admin/config/connect.php";
             <div class="view_hostel_details_btn"> <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>"> View Details >>></a></div>
           </div>
         </div>
+        <!--  -->
     <?php
       }
     } else {

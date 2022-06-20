@@ -23,10 +23,7 @@ include "../admin/config/connect.php";
             ?>
             <img src="../admin/upload/<?php echo trim($big_image['image_name']); ?>" alt="" id="large_images">
             <div class="image_wrapper owl-carousel owl-theme">
-                <?php  
-                while( $big_image){?>
-                
-              ?>
+               
             </div>
         </div>
 
