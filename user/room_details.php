@@ -149,8 +149,11 @@ include "../admin/config/connect.php";
                                 </div>
                                 <div class="modal-body">
                                     <form method="POST">
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d94cd72fdf183eacc53faa6084bdb37f9eadc755
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label"><?php echo $ex_results['room_name']; ?></label>
                                             <!-- <input type="text" class="form-control" id="recipient-name"> -->

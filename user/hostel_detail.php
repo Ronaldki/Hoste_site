@@ -121,10 +121,17 @@ if ($result2) {
                         $imageRows = mysqli_fetch_assoc($sqlImageresults);
                         // if the ro is avaolable
                         if ($imageRows) { ?>
+<<<<<<< HEAD
                             <img src="../admin/uploads/<?php echo trim($imageRows['image_name']); ?>" width="150px" height="150px" alt="">
                         <?php
                         } else { ?>
                             <img src="../admin/uploads/<?php echo trim($row['image_name']); ?>" width="150px" height="150px" alt="">
+=======
+                            <img src="../admin/upload/<?php echo trim($imageRows['image_name']); ?>" width="150px" height="150px" alt="">
+                        <?php
+                        } else { ?>
+                            <img src="../admin/upload/<?php echo trim($row['image_name']); ?>" width="150px" height="150px" alt="">
+>>>>>>> d94cd72fdf183eacc53faa6084bdb37f9eadc755
                     <?php
                         }
                     }
@@ -136,7 +143,11 @@ if ($result2) {
                         <div class="prize">Ugx: <?php echo trim($row['room_fee']); ?></div>
                         <div class="action">
                             <button id="book_btn"><a href="">Book</a></button> &nbsp; &nbsp;
+<<<<<<< HEAD
                             <button id="details_btn"><a href="room_details.php?hostel_id=<?php echo trim($row["hostel_id"])?>&room_id=<?php echo trim($row["room_id"])?>&image_status=<?php echo trim($row["status"])?>">View Detail...</a></button>
+=======
+                            <button id="details_btn"><a href="room_details.php?hostel_name=<?php echo trim($row["room_name"])?>&hostel_id=<?php echo trim($row["hostel_id"])?>&image_status=<?php echo trim($row["status"])?>">View Detail...</a></button>
+>>>>>>> d94cd72fdf183eacc53faa6084bdb37f9eadc755
                             <!--  -->
                         </div>
                     </div>

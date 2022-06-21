@@ -30,7 +30,7 @@ if (empty($hostelId) || empty($hostelNmame) || empty($hostelDescription || $host
 
                 if (in_array($image_exe, $allow_exe)) {
                     $new_file_name =  'IMG-' . uniqid().".".$image_exe;
-                    move_uploaded_file($temp_name, "uploads/".$new_file_name);
+                    move_uploaded_file($temp_name, "upload/".$new_file_name);
 
                     //then push the whole thing to the database
                     $sql2 = "INSERT INTO hostel_tbl (hostel_name, user_id, hostel_image, hostel_description,status )
