@@ -121,10 +121,10 @@ if ($result2) {
                         $imageRows = mysqli_fetch_assoc($sqlImageresults);
                         // if the ro is avaolable
                         if ($imageRows) { ?>
-                            <img src="../admin/uploads/<?php echo trim($imageRows['image_name']); ?>" width="150px" height="150px" alt="">
+                            <img src="../admin/upload/<?php echo trim($imageRows['image_name']); ?>" width="150px" height="150px" alt="">
                         <?php
                         } else { ?>
-                            <img src="../admin/uploads/<?php echo trim($row['image_name']); ?>" width="150px" height="150px" alt="">
+                            <img src="../admin/upload/<?php echo trim($row['image_name']); ?>" width="150px" height="150px" alt="">
                     <?php
                         }
                     }
