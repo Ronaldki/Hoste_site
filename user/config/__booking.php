@@ -23,7 +23,7 @@ if (isset($_POST['sub'])) {
         
                     $qr = mysqli_query($con, $qry5);
                     
-                    echo '<h6 class = "text-success">You have Successfully Booked '.$ex_results["room_name"].' room At a fee of Ugx: '. $_POST["fees"].'</h6>';
+                    echo '<h6 class = "text-success">Yourhave Successfully Booked '.$ex_results["room_name"].' At a fee of Ugx: '. $_POST["fees"].'</h6>';
 
                 }
 

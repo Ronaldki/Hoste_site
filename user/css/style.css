@@ -226,10 +226,6 @@ hr{
     background-color: #fff;
 
 }
-.card img{
-   object-fit: cover;
-
-}
 .card:hover{
     box-sizing: border-box;
    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
@@ -244,9 +240,6 @@ hr{
 
 .action{
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .card .card_datails .action button{
    padding: 5px 10px;
