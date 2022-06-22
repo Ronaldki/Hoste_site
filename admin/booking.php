@@ -12,17 +12,17 @@
      <div id="layoutSidenav_content">
          <main>
              <div class="container-fluid px-4">
-                 <h3 class="mt-4 text-secondary">Users</h3>
+                 <h3 class="mt-4 text-secondary">Bokings</h3>
                  <!-- <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="home.php">Home</a></li>
-                        <!-- <li class="breadcrumb-item active"><a href="table_admin.php">Table</Table></a> Tables</li> -->
+                        <! <li class="breadcrumb-item active"><a href="table_admin.php">Table</Table></a> Tables</li> -->
                         <!-- <a href="">Admins</a> -->
                  <!-- </ol> -->
-                 
+<!--                  
                  <?php
-                    include "../include/admin_user_list.php";
+                    // include "../include/admin_user_list.php";
 
-                    ?>
+                    ?> -->
 
 
 <div class="card mb-4">
@@ -33,10 +33,11 @@
                                      <th>NO</th>
                                      <th>Name</th>
                                      <th>Phone</th>
-                                     <th>Email</th>
-                                     <th>Image</th>
-                                     <th> Date</th>
-                                     <th>Action</th>
+                                     <th>Hostel</th>
+                                     <th>Room Name</th>
+                                     <th>Fees Paid </th>
+                                     <th>Hostel Image</th>
+                                     <th>Booked Date</th>
                                  </tr>
                                 </thead>
                                 
@@ -45,8 +46,7 @@
 
                                     // sellect all the admins from the database
                                     $num = 0;
-
-                                    $sql = "SELECT * FROM user_tbl WHERE type = 'users' AND status='active'";
+                                    $sql = "SELECT * FROM booking_tbl JOIN room_tbl ON booking_tbl.room_id = room_tbl.room_id JOIN hostel_tbl ON hostel_tbl.hostel_id = room_tbl.hostel_id JOIN user_tbl ON user_tbl.user_id = booking_tbl.user_id WHERE user_tbl.type= 'users'" ;
                                     $result = mysqli_query($con, $sql);
                                     if ($result) {
                                         while ($rows = mysqli_fetch_assoc($result)) { ?>
@@ -56,22 +56,29 @@
                                              <td><?php echo $num ?></td>
                                              <td><?php echo $rows['fname'] . " " . $rows['lname'] ?></td>
                                              <td><?php echo $rows['phone'] ?></td>
-                                             <td><?php echo $rows['email'] ?></td>
+                                             <td><?php echo $rows['hostel_name'] ?></td>
+                                             <td><?php echo $rows['room_name'] ?></td>
+                                             <td>Ugx: <?php echo $rows['room_fee'] ?></td>
                                              <td><?php
                                                     if ($rows['image'] != '') {
                                                         echo '<i  class="fa fa-user"></i>';
                                                     } else { ?>
 
-                                                     <img src="../admin/assets/img/testimonial-bg1.jpg" alt="" width="40px " ; height="40px" ;>
+                                                     <img src="../admin/upload/<?php echo trim($rows['hostel_image'])?>" alt="" width="40px " ; height="40px" ;>
                                                  <?php
 
                                                     }
                                                     ?>
                                              </td>
-                                             <td><?php echo $rows['date'] ?></td>
+                                             <td><?php echo $rows['data_crated'] ?></td>
                                              <td class="justify-between">
-                                                 <a href="./config/__update_superAdmin.php?update=<?php echo $rows['user_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['user_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
-                                                 <a href="./config/__delete_superAdmin.php?delete=<?php echo $rows['user_id']; ?>"><i class="fa fa-trash text-danger"><?php echo $rows['user_id']; ?></i></a>
+                                              
+                                                 <?php
+
+                                                
+                                                 include '../admin/config/__confirm_booking.php';
+                                                 ?>
+                                                 
                                              </td>
                                          </tr>
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,17 +17,17 @@
     <link href="../admin/css/style2.css" rel="stylesheet" />
 
     <!-- <link rel="stylesheet" href="../admin/css/toggle.css"> -->
-<?php
+    <?php
 
-// setting up the session for loggin in
-session_start();
-if (!isset($_SESSION['login_id'])) {
+    // setting up the session for loggin in
+    session_start();
+    if (!isset($_SESSION['admin_login_id'])) {
 
-    // take us back to the login form
-    header("location:index.php");
-}
+        // take us back to the login form
+        header("location:index.php");
+    }
 
-?>
+    ?>
 
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../admin/css/styles.css">
@@ -51,7 +50,23 @@ if (!isset($_SESSION['login_id'])) {
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php
+                    $sess = $_SESSION['admin_login_id'];
+                    $sql = "SELECT * FROM user_tbl WHERE user_id = '$sess' AND status='active'";
+                    $result = mysqli_query($con, $sql);
+                    if(!$result){
+                        echo mysqli_error($con).'//////////////////';
+                    }
+
+                    $rows = mysqli_fetch_assoc($result);
+                    if ($rows['image'] != '') {
+                        echo '<i  class="fa fa-user"></i>';
+                    } else { ?>
+                        <img src="../admin/assets/img/testimonial-bg1.jpg" alt="" width="40px " ; height="40px"class="rounded" ;>
+                    <?php
+                    }
+                    ?></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">Settings</a></li>
                     <li><a class="dropdown-item" href="#!">Profile</a></li>

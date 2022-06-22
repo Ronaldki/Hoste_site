@@ -44,7 +44,10 @@
                                             </div>
                                             
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <div class="d-grid"><button class="btn-success" name='login' type="submit" >Login</button></div>
+                                                <div class="">
+                                                    <button class="btn-success" name='login' type="submit" >Login</button>
+                                                    <button class="btn-warning" ><a href="register.php" style="text-decoration: none;">Register</a></button>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>

@@ -54,50 +54,70 @@ session_start();
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search </button>
         </form>
-        <a class="nav-link " href="#"><i class="fa fa-shopping-cart text-light">Booked</i> </a>
+        <a class="nav-link " href="#"><i class="fa fa-shopping-cart text-light"></i> </a>
         
-                <?php
-                $con = mysqli_connect("localhost", "root", "", "beacon_db");
-        
-                $query = mysqli_query($con, "SELECT * FROM message_tbl WHERE status= 0");
-                $count = mysqli_num_rows($query);
-        
-                ?>
-        
-                <ul class="navbar-nav mr-5 ">
-                  <!-- <i class="fa fa-envelope"></i> -->
-        
-                  <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle notification" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <!-- Inbox -->
-        
-                      <i class="fa fa-bell fa-2x text-white"></i><span class="badge badge-danger notificationicon " ><?php echo $count; ?></span>
-                    </a>
-        
-                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                      <?php
-                      $query2 = mysqli_query($con, "SELECT * FROM message_tbl WHERE status= 0");
-        
-                      if (mysqli_num_rows($query2) > 0) {
-        
-                        while ($row = mysqli_fetch_assoc($query2)) {
-        
-                          echo '<a class="dropdown-item text-primary " href="#">' . $row['text'] . '</a>';
-                          // echo '<a class="dropdown-item text-primary" href="../read_message.php?id=' . $row['id'] . ' ">' . $row['text'] . '</a>';
-                          echo '<div class="dropdown-divider"></div>';
-                        }
-                      } else {
-        
-                        echo 
-                        '<a class="dropdown-item text-danger font-weight-bold" href="#"> <i class="fas fa-frown-open"></i>No Message</a>';
-                      }
-                      ?>
-        
-        
-                    </div>
-                  </li>
-                </ul>
+        <?php
+        $con = mysqli_connect("localhost", "root", "", "beacon_db");
 
+        $query = mysqli_query($con, "SELECT * FROM message_tbl WHERE status= 0");
+        $count = mysqli_num_rows($query);
+
+        ?>
+
+        <ul class="navbar-nav mr-5 ">
+          <!-- <i class="fa fa-envelope"></i> -->
+
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle notification" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <!-- Inbox -->
+
+              <i class="fa fa-bell fa-2x text-white"></i><span class="badge badge-danger notificationicon "><?php echo $count; ?></span>
+            </a>
+
+            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <?php
+              $query2 = mysqli_query($con, "SELECT * FROM message_tbl WHERE status= 0");
+              
+              if (mysqli_num_rows($query2) > 0) {
+                
+                while ($row = mysqli_fetch_assoc($query2)) {
+                  
+                  echo '<a class="dropdown-item text-primary " href="#">' . $row['text'] . '</a>';
+                  // echo '<a class="dropdown-item text-primary" href="../read_message.php?id=' . $row['id'] . ' ">' . $row['text'] . '</a>';
+                  echo '<div class="dropdown-divider"></div>';
+                }
+              } else {
+                
+                echo
+                '<a class="dropdown-item text-danger font-weight-bold" href="#"> <i class="fas fa-frown-open"></i>No Message</a>';
+              }
+              ?>
+
+
+</div>
+</li>
+</ul>
+<?php
+if(!isset($_SESSION['login_id'])){
+  echo '<a class="nav-link " href="#"><i class="text-success ">Login</i> </a>';
+}
+else{?>
+  <form action="index.php" method="POST">
+
+    <?php  
+  
+    echo '<button class ="text-danger logout_btn" name="log">Logout</button>';
+
+    if(isset($_POST['log'])){
+      session_destroy();
+
+    }
+    ?>
+  </form>
+
+<?php
+}
+//?>
 
       </div>
     </nav>

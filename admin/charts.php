@@ -1,5 +1,9 @@
     <?php
-    include "../include/navbar.php";
+  include "./config/connect.php";
+  include "../include/navbar.php";
+  
+  
+  
     ?>
 
     <div id="layoutSidenav_content">

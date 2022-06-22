@@ -1,9 +1,10 @@
 <?php
-include "../admin/config/connect.php";
-include "../include/navbar.php";
-
-
-?>
+  include "./config/connect.php";
+  include "../include/navbar.php";
+  
+  
+  
+    ?>
 <!-- 
            Navbar section.............
         -->

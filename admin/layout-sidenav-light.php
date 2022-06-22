@@ -1,9 +1,9 @@
 <?php
 // session_start();
 ob_start();
-include "../include/navbar.php";
 // include '../admin/config/connect.php';
-// include('./config/connect.php')
+include('./config/connect.php');
+include "../include/navbar.php";
 
 ?>
 <!-- 

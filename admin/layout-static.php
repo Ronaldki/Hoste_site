@@ -1,7 +1,7 @@
 <?php
 ob_start();
+include('./config/connect.php');
 include "../include/navbar.php";
-// include('./config/connect.php')
 ?>
 <!-- 
            Navbar section.............

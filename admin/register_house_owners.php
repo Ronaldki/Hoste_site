@@ -1,6 +1,6 @@
 <?php
 ob_start();
-include "../admin/config/connect.php";
+include "./config/connect.php";
 include "../include/navbar.php";
 // include('./config/__register_house_owners.php')
 
