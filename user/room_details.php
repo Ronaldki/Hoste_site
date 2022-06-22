@@ -13,79 +13,122 @@ include "../admin/config/connect.php";
 // $sql2 = "SELECT * FROM room_tbl WHERE hostel_id = $hostel_id";
 // $result2 = mysqli_query($con, $sql2);
 // if ($result2) {
-//     $cont = mysqli_num_rows($result2);
-//     //   echo $cont;
-// } else {
-//     echo mysqli_error($con);
-// }
-
-
-?>
+    //     $cont = mysqli_num_rows($result2);
+    //     //   echo $cont;
+    // } else {
+        //     echo mysqli_error($con);
+        // }
+        
+        
+        ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+    
+    <head>
+        <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
-
-
-
+    
+    
+    
+    
     <section class=" hostel_body">
         <div class="header_div">
-            <h3>bako</h3>
+            <h3>
+                <?php
+                $htid = $_GET['hostel_id'];
+               
+                $sql = "SELECT * FROM hostel_tbl WHERE hostel_id = '$htid'";
+                $rslts = mysqli_query($con, $sql);
+                
+                $rows = mysqli_fetch_assoc($rslts);
+                echo $rows['hostel_name'];
+                ?>
+            </h3>
             <hr id="small_hr">
-
+            
         </div>
         <div class="hostel_detail_container">
-
+            
             <div class="hostel_image">
-                <img src="../admin/uploads/IMG-62a5e0b40eb62.jpg" alt="" id="large_images">
+                
+                <?php
+                $hid = $_GET['hostel_id'];
+                $sts = $_GET['image_status'];
+                $sql = "SELECT * FROM image_tbl WHERE hostel_id = '$hid' AND status ='$sts'";
+                
+                $rslt = mysqli_query($con, $sql);
+                
+                $row = mysqli_fetch_assoc($rslt);
+
+                ?>
+                <img src="../admin/uploads/<?php echo trim($row['image_name']); ?>" alt="" id="large_images">
+
                 <div class="image_wrapper owl-carousel owl-theme">
-                    <img src="../admin/uploads/IMG-62a5be5c33c7a.jpg" width="60px" height="60px" alt="" class="scralling_detail_image">
-                    <img src="../admin/uploads/IMG-62a621083d1cc.jpg" width="60px" height="60px" alt="" class="scralling_detail_image">
-                    <img src="../admin/uploads/IMG-62a629e90e1ff.jpg" width="60px" height="60px" alt="" class="scralling_detail_image">
-                    <img src="../admin/uploads/IMG-62a621083d1cc.jpg" width="60px" height="60px" alt="" class="scralling_detail_image">
-                    <img src="../admin/uploads/IMG-62a5be5c33c7a.jpg" width="60px" height="60px" alt="" class="scralling_detail_image">
+                    
+                    <?php
+                    $sql = "SELECT * FROM image_tbl WHERE hostel_id = '$hid' AND status ='$sts'";
+                    $rslt = mysqli_query($con, $sql);
+                    while ($data = mysqli_fetch_assoc($rslt)) { ?>
+
+
+                        <img src="../admin/uploads/<?php echo trim($data['image_name']); ?>" width="60px" height="60px" alt="" class="scralling_detail_image">
+                    <?php
+                    }
+                    ?>
+
+
+
                 </div>
             </div>
-
+            
             <div class="hostel_details ">
 
                 <div class="hostel_crdentials">
-                    <!-- <p>prize: <span>ugx. 300000</span></p> -->
-                    <div class="text-center">
+                    <!-- ..............Get Room details............... -->
+                    <?php
+                    // $qry = "SELECT * FROM room_tbl WHERE hostel_id = '$hid'"; 
+                    $roomid = $_GET['room_id'];
+                    $qry =  "SELECT * FROM  room_tbl JOIN hostel_tbl ON hostel_tbl.hostel_id = room_tbl.hostel_id WHERE hostel_tbl.hostel_id = '$hid' AND room_tbl.room_id= '$roomid'";
+                    $ex = mysqli_query($con, $qry);
+                    
+                    if (!$ex) {
+                        echo mysqli_error($con);
+                    }
+                    $ex_results = mysqli_fetch_assoc($ex);
+                    ?>
 
-                    </div>
                     <div class="detail_wrapper">
                         <div class="table_head">Room Name</div>
-                        <p class="detail_value ">new york</p>
+                        <p class="detail_value "><?php echo $ex_results['room_name']; ?></p>
                     </div>
                     <div class="detail_wrapper">
                         <div class="table_head">Room size</div>
-                        <p class="detail_value ">single</p>
+                        <p class="detail_value "><?php echo $ex_results['room_status']; ?></p>
                     </div>
                     <div class="detail_wrapper">
                         <div class="table_head ">Prize: </div>
-                        <div class="detail_value">Ugx. 300000</div>
+                        <div class="detail_value">Ugx:<?php echo $ex_results['room_fee']; ?></div>
                     </div>
                     <div class="detail_wrapper">
                         <div class="table_head">Status: </div>
                         <p class="detail_value">not booked</p>
                     </div>
                     <div class="detail_wrapper describe">descrptions</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet commodi nostrum dolores facere, aspernatur reprehenderit deserunt suscipit nam tempora
-                        molestias natus beatae numquam culpa a optio, consectetur doloribus possimus quos repellat ea voluptatum?</p>
-
+                    <p><?php echo $ex_results['hostel_description']; ?></p>
+                    
+                    <?php include "./config/__booking.php";?>
                     <!-- <form class="btn-container" action=""> -->
-                    <!-- <button class="btn btn-primary w-25">Book</button> -->
-                    <button class="btn btn-primary w-25" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Book</button>
+                        <!-- <button class="btn btn-primary w-25">Book</button> -->
+
+
+                        
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -95,11 +138,9 @@ include "../admin/config/connect.php";
                                     <!-- <h5 class="text-right">Welcome</h5> -->
                                     <p>
                                         <?php
-                                        if(isset($_SESSION['login_id'])){
-                                           echo "<h4 class='text-success '>Procede To Book</h4>";
-                                            
-                                        }
-                                        else{
+                                        if (isset($_SESSION['login_id'])) {
+                                            echo "<h6 class='text-success '>Proceed To Book</h6>";
+                                        } else {
                                             echo ' <a href="login.php">Please Login</a>';
                                         }
                                         ?>
@@ -109,20 +150,16 @@ include "../admin/config/connect.php";
                                 <div class="modal-body">
                                     <form method="POST" >
                                         <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label">Room Name...</label>
+                                            <label for="recipient-name" class="col-form-label"><?php echo $ex_results['room_name']; ?></label>
                                             <!-- <input type="text" class="form-control" id="recipient-name"> -->
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Booking Fees:</label>
-                                            <input type="number" class="form-control" id="recipient-name" placeholder="Fees">
+                                            <input type="number" class="form-control" id="recipient-name" placeholder="Fees" name="fees">
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">Room Description:</label>
-                                            <textarea class="form-control false" id="message-text" disabled></textarea>
-                                        </div>
-                                        <div class="mb-3">  
-                                            <label for="message-text" class="col-form-label">Message:</label>
-                                            <textarea class="form-control" id="message-text"></textarea>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                            <button class="btn btn-primary" name="sub">Book</button>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -131,7 +168,6 @@ include "../admin/config/connect.php";
                                         </div>
                                     </form>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>

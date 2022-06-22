@@ -26,7 +26,7 @@ include "../admin/config/connect.php";
 
         <div class="card_container ">
           <div class="cards">
-            <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="image"><img src="../admin/upload/<?php echo trim($row['hostel_image']); ?>" alt=""></a>
+            <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="image"><img src="../admin/uploads/<?php echo trim($row['hostel_image']); ?>" alt=""></a>
             <div class="card_hostel_name "> <?php echo $row["hostel_name"] ?></div>
             <div class="view_hostel_details_btn"> <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>"> View Details >>></a></div>
           </div>
