@@ -107,7 +107,7 @@ include "../admin/config/connect.php";
                                     <!-- <button type="button" class="btn btn-danger btn-close" data-bs-dismiss="modal" aria-label="Close">X</button> -->
                                 </div>
                                 <div class="modal-body">
-                                    <form method="POST">
+                                    <form method="POST" >
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Room Name...</label>
                                             <!-- <input type="text" class="form-control" id="recipient-name"> -->
@@ -120,15 +120,16 @@ include "../admin/config/connect.php";
                                             <label for="message-text" class="col-form-label">Room Description:</label>
                                             <textarea class="form-control false" id="message-text" disabled></textarea>
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="mb-3">  
                                             <label for="message-text" class="col-form-label">Message:</label>
                                             <textarea class="form-control" id="message-text"></textarea>
                                         </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                            <button class="btn btn-primary">Book ddd</button>
+                                           <input type="submit">
+                                        </div>
                                     </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Book</button>
                                 </div>
                                 
                             </div>
