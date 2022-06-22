@@ -28,7 +28,7 @@ include "../admin/config/connect.php";
 
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="../admin/uploads/IMG-62a621083d1cc.jpg" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="../admin/upload/IMG-62a621083d1cc.jpg" alt="Second slide">
       </div>
       <div class="carousel-item slide_image_parent">
         <div class="caption ">
@@ -40,7 +40,7 @@ include "../admin/config/connect.php";
             
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="../admin/uploads/IMG-62a5e08946d18.jpg" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="../admin/upload/IMG-62a5e08946d18.jpg" alt="Second slide">
       </div>
       <div class="carousel-item slide_image_parent">
         <div class="caption ">
@@ -52,7 +52,7 @@ include "../admin/config/connect.php";
             
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="../admin/uploads/IMG-62a629e90e1ff.jpg" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="../admin/upload/IMG-62a629e90e1ff.jpg" alt="Second slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -126,7 +126,7 @@ include "../admin/config/connect.php";
       while ($row = mysqli_fetch_assoc($result)) { ?>
         <div class="card_container ">
           <div class="cards">
-            <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="image"><img src="../admin/uploads/<?php echo trim($row['hostel_image']); ?>" alt=""></a>
+            <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="image"><img src="../admin/upload/<?php echo trim($row['hostel_image']); ?>" alt=""></a>
             <div class="card_hostel_name "> <?php echo $row["hostel_name"] ?></div>
             <div class="view_hostel_details_btn"> <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>"> View Details >>></a></div>
           </div>
@@ -162,7 +162,7 @@ include "../admin/config/connect.php";
       while ($row = mysqli_fetch_assoc($result)) { ?>
         <div class="card_container ">
           <div class="cards">
-            <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="image"><img src="../admin/uploads/<?php echo trim($row['hostel_image']); ?>" alt=""></a>
+            <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>" class="image"><img src="../admin/upload/<?php echo trim($row['hostel_image']); ?>" alt=""></a>
             <div class="card_hostel_name "> <?php echo $row["hostel_name"] ?></div>
             <div class="view_hostel_details_btn"> <a href="./hostel_detail.php?hostel_id=<?php echo $row['hostel_id']; ?>"> View Details >>></a></div>
           </div>

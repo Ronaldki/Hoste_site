@@ -2,6 +2,7 @@
                         ob_start();
                         // include('../admin/config/connect.php');
                         // $con = mysqli_connect("localhost", "root","", "beacon_db");
+                        // 
                         
                         
                         // collecting fom data

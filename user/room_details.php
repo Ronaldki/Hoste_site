@@ -68,7 +68,7 @@ include "../admin/config/connect.php";
                 $row = mysqli_fetch_assoc($rslt);
 
                 ?>
-                <img src="../admin/uploads/<?php echo trim($row['image_name']); ?>" alt="" id="large_images">
+                <img src="../admin/upload/<?php echo trim($row['image_name']); ?>" alt="" id="large_images">
 
                 <div class="image_wrapper owl-carousel owl-theme">
                     
@@ -78,7 +78,7 @@ include "../admin/config/connect.php";
                     while ($data = mysqli_fetch_assoc($rslt)) { ?>
 
 
-                        <img src="../admin/uploads/<?php echo trim($data['image_name']); ?>" width="60px" height="60px" alt="" class="scralling_detail_image">
+                        <img src="../admin/upload/<?php echo trim($data['image_name']); ?>" width="60px" height="60px" alt="" class="scralling_detail_image">
                     <?php
                     }
                     ?>
@@ -161,11 +161,7 @@ include "../admin/config/connect.php";
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                             <button class="btn btn-primary" name="sub">Book</button>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                            <button class="btn btn-primary">Book ddd</button>
-                                           <input type="submit">
-                                        </div>
+                                      
                                     </form>
                                 </div>
                             </div>
