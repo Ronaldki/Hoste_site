@@ -6,6 +6,9 @@ body{
 a{
     text-decoration: none !important;
 }
+img{
+    cursor: pointer;
+}
 hr{
     height: 3px !important;
 }
@@ -135,6 +138,20 @@ hr{
 .hostel_detail_container{
     display: flex;
     margin: 20px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* media queries */
+@media only screen and (max-width: 850px) {
+    .hostel_detail_container {
+       display: inline-block;
+       width: 190vw;
+       height: auto;
+    }
+    .hostel_detail_container .hostel_image{
+       width: 100%;
+    }
 }
 .hostel_detail_container .hostel_image{
     display: flex;
@@ -147,6 +164,7 @@ hr{
     
 }
 .hostel_detail_container .hostel_image img{
+    cursor: pointer;
     width: 100%;
     height: 80%;
     
@@ -167,6 +185,7 @@ hr{
     width: 100px;
     height: 90px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .hostel_details .name{
    color: rgb(139, 139, 139);
@@ -347,6 +366,7 @@ color:white ;
  
 }
 .card_container .cards .image img{
+    cursor: pointer;
     width: 100%;
     height: 300px;
  
@@ -397,6 +417,7 @@ background-color: rgb(219, 219, 219);
     width: 25%;
     height: 200px !important;
     margin: 0px !important;
+    cursor: pointer;
 }
  .owl-prev{
      font-size: 30px;
