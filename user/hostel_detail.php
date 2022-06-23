@@ -107,10 +107,10 @@ if ($result2) {
                         $imageRow = mysqli_fetch_assoc($sqlImageresult);
                         // if the ro is avaolable
                         if ($imageRow) { ?>
-                            <img src="../admin/upload/<?php echo trim($imageRow['image_name']); ?>" width="150px" height="150px" alt="">
+                            <img src="../admin/upload/<?php echo trim($imageRow['image_name']); ?>" width="150px" height="150px" class="card_img" alt="">
                         <?php
                         } else { ?>
-                            <img src="../admin/upload/<?php echo trim($row['image_name']); ?>" width="150px" height="150px" alt="">
+                            <img src="../admin/upload/<?php echo trim($row['image_name']); ?>" width="150px" height="150px" class="card_img" alt="">
                         <?php
                         }
 
@@ -121,10 +121,10 @@ if ($result2) {
                         $imageRows = mysqli_fetch_assoc($sqlImageresults);
                         // if the ro is avaolable
                         if ($imageRows) { ?>
-                            <img src="../admin/upload/<?php echo trim($imageRows['image_name']); ?>" width="150px" height="150px" alt="">
+                            <img src="../admin/upload/<?php echo trim($imageRows['image_name']); ?>" width="150px" height="150px"alt="">
                         <?php
                         } else { ?>
-                            <img src="../admin/upload/<?php echo trim($row['image_name']); ?>" width="150px" height="150px" alt="">
+                            <img src="../admin/upload/<?php echo trim($row['image_name']); ?>" width="150px" height="150px"  alt="">
                     <?php
                         }
                     }
@@ -160,6 +160,10 @@ include "../include/user_footer.php";
 
 ?>
 
+
+
+<script src="./js/jQuery v3.6.0.js"></script>
+<script src="./js/room_deetail.js"></script>
 </body>
 
 </html>

@@ -205,6 +205,7 @@ include "../admin/config/connect.php";
             })
         </script>
 </body>
+<script src="./js/jQuery v3.6.0.js"></script>
 <script src="./js/room_deetail.js"></script>
 
 
