@@ -58,7 +58,7 @@
                                              <td><?php echo $rows['phone'] ?></td>
                                              <td><?php echo $rows['hostel_name'] ?></td>
                                              <td><?php echo $rows['room_name'] ?></td>
-                                             <td>Ugx: <?php echo $rows['room_fee'] ?></td>
+                                             <td>Ugx: <?php echo $rows['fee_paid'] ?></td>
                                              <td><?php
                                                     if ($rows['image'] != '') {
                                                         echo '<i  class="fa fa-user"></i>';
