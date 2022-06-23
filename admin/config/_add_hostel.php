@@ -30,21 +30,24 @@ if (empty($hostelId) || empty($hostelNmame) || empty($hostelDescription || $host
 
                 if (in_array($image_exe, $allow_exe)) {
                     $new_file_name =  'IMG-' . uniqid().".".$image_exe;
-                    move_uploaded_file($temp_name, "upload/".$new_file_name);
+                    move_uploaded_file($temp_name, "../upload/".$new_file_name);
 
                     //then push the whole thing to the database
-                    $sql2 = "INSERT INTO hostel_tbl (hostel_name, user_id, hostel_image, hostel_description,status )
-                            VALUES('$hostelNmame', '$hostelId', ' $new_file_name','$hostelDescription', '$status')";
+                    $sql2 = "INSERT INTO hostel_tbl (hostel_name, user_id, hostel_description,hostel_image,status )
+                            VALUES('$hostelNmame', '$hostelId','$hostelDescription',' $new_file_name', '$status')";
 
                     $execute2 = mysqli_query($con, $sql2);
                     if ($execute2) {
                         // $success = '<p class="text-success">Hostel add successfully...</p>';
-                        echo ("<script>alert('Successfully added')</script>");
+                        echo "<script>alert('Hostel Added Sucessfully')</script>";
+                         header("location:http://localhost/HostelApp/Hoste_site/admin/layout-static.php");
+                        } else {
+                            echo (mysqli_error($con) . "<script>alert('Something went wrong')</script>");
+                            header("location:http://localhost/HostelApp/Hoste_site/admin/layout-static.php");
+                        }
                     } else {
-                        echo (mysqli_error($con) . "<script>alert('Something went wrong')</script>");
-                    }
-                } else {
-                    echo ("<script>alert('You can only upload jpeg, png, jpg, svg')</script>");
+                        echo ("<script>alert('You can only upload jpeg, png, jpg, svg')</script>");
+                        header("location:http://localhost/HostelApp/Hoste_site/admin/layout-static.php");
                 }
             }
         }

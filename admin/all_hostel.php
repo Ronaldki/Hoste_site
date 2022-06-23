@@ -21,11 +21,11 @@
                             <tr>
                                 <th>NO</th>
                                 <th>Hostel Name</th>
-                                <th>Reg. Date</th>
+                                <th>Owner</th>
                                 <th>Hostel Details</th>
-                                <!-- <th>Image</th> -->
+                                <th>Image</th>
                                 <!-- <th> Date</th> -->
-                                <th>Action</th>
+                                <th>Date Created</th>
                             </tr>
                         </thead>
 
@@ -35,7 +35,7 @@
                             // sellect all the admins from the database
                             $num = 0;
 
-                            $sql = "SELECT * FROM hostel_tbl";
+                            $sql = "SELECT * FROM hostel_tbl JOIN user_tbl ON hostel_tbl.user_id= user_tbl.user_id ORDER BY hostel_tbl.created_date DESC";
                             $result = mysqli_query($con, $sql);
                             if ($result) {
                                 while ($rows = mysqli_fetch_assoc($result)) { ?>
@@ -43,15 +43,16 @@
 
                                     <tr>
                                         <td><?php echo $num ?></td>
-                                        <td><?php echo $rows['hostel_name'] ?></td>
+                                        <td><?php echo $rows['hostel_name'] ;?></td>
+                                        <td><?php echo $rows['fname'].' '.$rows['lname'] ;?></td>
+                                        <td class="w-25"><div >
+                                            <?php echo $rows['hostel_description']?></td>
+
+                                        </div>
                                         <td><?php echo $rows['created_date'] ?></td>
                               
-                                        <td>
-                                            <a href="./hostel_details?datails=<?php echo $rows['hostel_id']; ?>" class="text-info"><i class="fa fa-pencil"><?php echo $rows['hostel_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
-                                            
-                                        </td>
                                         <td class="justify-between">
-                                            <a href="./config/__update_hostel.php?update=<?php echo $rows['hostel_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['hostel_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                                            <a href="update_hostel.php?update=<?php echo $rows['hostel_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['hostel_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
                                             <a href="./config/__delete_hostel_and_rooms.php?hostel_id=<?php echo $rows['hostel_id']; ?>"><i class="fa fa-trash text-danger"><?php echo $rows['hostel_id']; ?></i></a>
                                         </td>
                                     </tr>

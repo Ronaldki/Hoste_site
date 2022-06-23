@@ -47,6 +47,7 @@
                                                 <div class="">
                                                     <button class="btn-success" name='login' type="submit" >Login</button>
                                                     <button class="btn-warning" ><a href="register.php" style="text-decoration: none;">Register</a></button>
+                                                    <a href="index.php" class="flex-end" style="text-decoration:none ;">Home</a>
                                                 </div>
                                             </div>
                                         </form>

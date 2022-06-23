@@ -99,7 +99,7 @@ session_start();
 </ul>
 <?php
 if(!isset($_SESSION['login_id'])){
-  echo '<a class="nav-link " href="#"><i class="text-success ">Login</i> </a>';
+  echo '<a class="nav-link " href="login.php"><i class="text-success ">Login</i> </a>';
 }
 else{?>
   <form action="index.php" method="POST">

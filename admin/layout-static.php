@@ -40,7 +40,7 @@ include "../include/navbar.php";
 
                 <h5 class="text-warning">If user Id is available, Add hostel Details</h5>
 
-                <form method='post' enctype="multipart/form-data">
+                <form method='post' enctype="multipart/form-data" action="./config/_add_hostel.php">
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <div class="form-floating mb-3 mb-md-0">
@@ -69,18 +69,12 @@ include "../include/navbar.php";
 
 
                     <div class="mt-4 mb-0">
-                        <div class="d-grid"><button class="btn-success" name='submit_hostel' type="submit">Create Account</button></div>
+                        <div class="d-grid"><button class="btn-success" name='submit_hostel'>Create Account</button></div>
                     </div>
                 </form>
             </div>
 
-                <?php
-                if(isset($_POST['submit_hostel'])){
-                        include("../admin/config/_add_hostel.php");
-                    
-                }
-                
-                ?>
+            
 
         </div>
     </main>

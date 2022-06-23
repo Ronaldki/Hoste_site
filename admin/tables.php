@@ -70,7 +70,7 @@
                                              </td>
                                              <td><?php echo $rows['date'] ?></td>
                                              <td class="justify-between">
-                                                 <a href="./config/__update_superAdmin.php?update=<?php echo $rows['user_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['user_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
+                                                 <a href="update_users.php?update=<?php echo $rows['user_id']; ?>"><i class="fa fa-pencil"><?php echo $rows['user_id']; ?></i></a> &nbsp; &nbsp; &nbsp; &nbsp;
                                                  <a href="./config/__delete_superAdmin.php?delete=<?php echo $rows['user_id']; ?>"><i class="fa fa-trash text-danger"><?php echo $rows['user_id']; ?></i></a>
                                              </td>
                                          </tr>

@@ -1,7 +1,7 @@
 
 
 <?php
-include "connect.php";
+// include "connect.php";
 $email = $_POST['email'];
 
 // query for sellecting the user id where email equela to the input email

@@ -106,7 +106,7 @@
 
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" style="text-decoration:none">View Details</a>
+                                        <a class="small text-white stretched-link" href="all_hostel.php" style="text-decoration:none">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

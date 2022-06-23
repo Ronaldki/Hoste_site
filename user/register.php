@@ -76,9 +76,14 @@ include('../user/config/__register_users.php');
                                         <div class="mt-4 mb-0">
                                             <div class="d-grid">
                                                 <button class="btn-success" name='submit' type="submit">Create Account</button>
-                                                <a href="login.php" style="text-decoration: none;">Login</a>
+                                                <div class="row">
+                                                    <a href="login.php" class="col-2" style="text-decoration: none;">Login</a>
+                                                    <a href="index.php" class="col-2" style="text-decoration:none ;">Home</a>
+
+                                                </div>
 
                                             </div>
+
                                         </div>
                                     </form>
                                 </div>
