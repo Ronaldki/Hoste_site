@@ -1,15 +1,16 @@
 <?php
 include '../admin/config/connect.php';
 
-$sql = "SELECT * FROM booking_tbl JOIN room_tbl ON booking_tbl.room_id = room_tbl.room_id JOIN hostel_tbl ON 
-         hostel_tbl.hostel_id = room_tbl.hostel_id JOIN user_tbl ON user_tbl.user_id = booking_tbl.user_id  WHERE
-         user_tbl.type= 'users' " ;
-         $result = mysqli_query($con, $sql);
-             if (!$result) {
-                echo mysqli_error($con);
-             }
-             else{
-                $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$sqlS = "SELECT * FROM hostel_tbl JOIN booking_tbl ON hostel_tbl.hostel_id = booking_tbl.hostel_id 
+       WHERE booking_tbl.hostel_id IN (SELECT hostel_id FROM booking_tbl  GROUP BY hostel_id ORDER BY
+       (SELECT count(hostel_id) AS num FROM booking_tbl  ) DESC) LIMIT 6 ";
+// $sql = "SELECT * FROM hostel_tbl WHERE hostel_id IN 
+//          (SELECT hostel_id FROM hostel_tbl GROUP BY hostel_id ORDER BY hostel_id DESC)";
+$result = mysqli_query($con, $sqlS);
+if (!$result) {
+   echo mysqli_error($con);
+} else {
+   $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-                echo json_encode($row);
-             }
+   echo json_encode($row);
+}
