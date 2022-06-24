@@ -121,8 +121,8 @@ include "../admin/config/connect.php";
     
 
     $sql = "SELECT * FROM hostel_tbl JOIN booking_tbl ON hostel_tbl.hostel_id = booking_tbl.hostel_id 
-    WHERE booking_tbl.hostel_id IN (SELECT hostel_id FROM booking_tbl  GROUP BY hostel_id ORDER BY
-    (SELECT count(hostel_id) AS num FROM booking_tbl  ) DESC) LIMIT 6 ";
+       WHERE booking_tbl.hostel_id IN (SELECT hostel_id FROM booking_tbl  GROUP BY hostel_id ORDER BY
+       (SELECT count(hostel_id) AS num FROM booking_tbl  ) DESC) LIMIT 6 ";
     $result = mysqli_query($con, $sql);
     if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_assoc($result)) { ?>
