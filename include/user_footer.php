@@ -73,10 +73,54 @@
 </section>
 
 <!-- java script -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+<script src="../user/js/jQuery v3.6.0.js"></script>
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="../user/js/jquery-2.2.4.min.js"></script>
 <script src="../user/js/owl.carousel.min.js"></script>
 <script src="../user/js/index.js"></script>
+<script>
+  $(document).ready(function() {
+
+    $(".fa-bell").on("click", function() {
+      console.log("Success");
+      $('.popup_content').toggle();
+    });
+  });
+
+  setInterval(auto_display, 100)
+
+
+
+
+  const xhr = new XMLHttpRequest()
+
+  function auto_display() {
+    xhr.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__read_ntificatipon.php')
+    xhr.onload = () => {
+      let mess = '';
+      let data = JSON.parse(xhr.responseText);
+      document.getElementById('count_messe').innerHTML = data.length;
+      for (let i = 0; i < data.length; i++) {
+        mess += `<li class="list-group-item"  >${data[i].text}</li>`
+      }
+      document.getElementById('messeges_list').innerHTML = mess
+
+    }
+
+    xhr.send()
+  }
+  // send data do databsee
+
+  document.getElementById('bell_icon').addEventListener('click', ()=>{
+    console.log('gsgsjhgjsd');
+    // xhr.open('get', 'http://localhost/HostelApp/Hoste_site/include/read_message.php')
+    // xhr.onload = () => {
+    // console.log(xhr.responseText);
+
+    // }
+
+    // xhr.send()
+  })
+</script>

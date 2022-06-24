@@ -78,35 +78,9 @@ include "../admin/config/connect.php";
       </div>
     </div>
 
-    <div class=" col-sm-5 col-ms-7 mt-3">
-
-      <ul class="list-group">
-        <li class="list-group-item">
-          <div class="h4 text-primary text-center">Sort Hostel</div>
-
-        </li>
-        <li class="list-group-item">
-          <form class="form-inline ">
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="number" class="form-control" id="inputPassword2" placeholder="min price">
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="number" class="form-control" id="inputPassword2" placeholder="max price">
-            </div>
-            <button type="submit" class="btn btn-primary mb-2">Submit</button>
-          </form>
-
-        </li>
-        <li class="list-group-item">
-          <a href="" class="p-2 text-secondary w-100" style="text-decoration:none ;">Single Rooms</a>
-
-        </li>
-        <li class="list-group-item">
-          <a href="" class=" p-2 text-secondary w-100" style="text-decoration:none ;">Double Rooms</a>
-
-        </li>
-      </ul>
-    </div>
+   <?php
+   include 'sort_hostel.php';
+   ?>
   </div>
 </section>
 
@@ -120,9 +94,8 @@ include "../admin/config/connect.php";
   <?php
     
 
-    $sql = "SELECT * FROM hostel_tbl JOIN booking_tbl ON hostel_tbl.hostel_id = booking_tbl.hostel_id 
-    WHERE booking_tbl.hostel_id IN (SELECT hostel_id FROM booking_tbl  GROUP BY hostel_id ORDER BY
-    (SELECT count(hostel_id) AS num FROM booking_tbl  ) DESC) LIMIT 6 ";
+    $sql = "SELECT * FROM hostel_tbl WHERE hostel_id IN
+    (SELECT hostel_id FROM booking_tbl  GROUP BY  hostel_id ORDER BY count(hostel_id) DESC  ) ORDER BY hostel_id DESC LiMIT 10 ";
     $result = mysqli_query($con, $sql);
     if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_assoc($result)) { ?>
