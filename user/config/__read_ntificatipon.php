@@ -9,5 +9,6 @@ $sql = "SELECT * FROM message_tbl WHERE status= '1' AND user_id = '1000' AND rec
  echo json_encode($data);
  
   }
+  // kkkk
 
 ?>
