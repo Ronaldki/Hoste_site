@@ -423,4 +423,11 @@ background-color: rgb(219, 219, 219);
      font-size: 30px;
  }
 
+ /* notificationnotificationnotification */
+
+ .notification{
+    background-color: red !important;
+    width: 200px !important;
+ }
+
 

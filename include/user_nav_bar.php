@@ -1,5 +1,6 @@
 <?php
 session_start();
+$con = mysqli_connect("localhost", "root", "", "beacon_db");
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +10,7 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>BEACON HOSTEL</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="../user/css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -17,7 +18,7 @@ session_start();
 </head>
 
 <body>
-  <section class="sticky-top">
+  <section class="sticky-top position-relative ">
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -54,94 +55,67 @@ session_start();
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search </button>
         </form>
-        <a class="nav-link " href="#"><i class="fa fa-shopping-cart text-light"></i> </a>
-        
-        <?php
-        $con = mysqli_connect("localhost", "root", "", "beacon_db");
+        <a class="nav-link text-light "><i class="fa fa-shopping-cart text-light"></i>
+          <!-- Cart functionality.... -->
+          <?php
+          if (!isset($_SESSION['login_id'])) {
+            echo '0';
+          } else {
+            $session = $_SESSION['login_id'];
+            $q_cart = "SELECT * FROM booking_tbl WHERE user_id = $session OR Booking_status ='pending' OR Booking_status ='confirmed' ";
 
-        $query = mysqli_query($con, "SELECT * FROM message_tbl WHERE status= 0");
-        $count = mysqli_num_rows($query);
+            $qry_run = mysqli_query($con, $q_cart);
+            if ($row = mysqli_num_rows($qry_run)) {
+              echo $row;
+            }
+          }
+          ?>
 
-        ?>
+        </a>
+
+       
 
         <ul class="navbar-nav mr-5 ">
           <!-- <i class="fa fa-envelope"></i> -->
 
           <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle notification" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link " id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
               <!-- Inbox -->
+              <i class="fa fa-bell fa-2x text-white" id= 'bell_icon'></i><span class="badge badge-danger notificationicon " id="count_messe"></span>
 
-              <i class="fa fa-bell fa-2x text-white"></i><span class="badge badge-danger notificationicon "><?php echo $count; ?></span>
             </a>
 
-            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-              <?php
-              $query2 = mysqli_query($con, "SELECT * FROM message_tbl WHERE status= 0");
-              
-              if (mysqli_num_rows($query2) > 0) {
-                
-                while ($row = mysqli_fetch_assoc($query2)) {
-                  
-                  echo '<a class="dropdown-item text-primary " href="#">' . $row['text'] . '</a>';
-                  // echo '<a class="dropdown-item text-primary" href="../read_message.php?id=' . $row['id'] . ' ">' . $row['text'] . '</a>';
-                  echo '<div class="dropdown-divider"></div>';
-                }
-              } else {
-                
-                echo
-                '<a class="dropdown-item text-danger font-weight-bold" href="#"> <i class="fas fa-frown-open"></i>No Message</a>';
-              }
-              ?>
+          </li>
+        </ul>
+        <!-- login and out using session -->
+        <?php
+        if (!isset($_SESSION['login_id'])) {
+          echo '<a class="nav-link " href="login.php"><i class="text-success ">Login</i> </a>';
+        } else { ?>
+          <form action="index.php" method="POST">
 
+            <?php
 
-</div>
-</li>
-</ul>
-<?php
-if(!isset($_SESSION['login_id'])){
-  echo '<a class="nav-link " href="login.php"><i class="text-success ">Login</i> </a>';
-}
-else{?>
-  <form action="index.php" method="POST">
+            echo '<button class ="text-danger logout_btn" name="log">Logout</button>';
 
-    <?php  
-  
-    echo '<button class ="text-danger logout_btn" name="log">Logout</button>';
+            if (isset($_POST['log'])) {
+              session_destroy();
+            }
+            ?>
+          </form>
 
-    if(isset($_POST['log'])){
-      session_destroy();
-
-    }
-    ?>
-  </form>
-
-<?php
-}
-//?>
+        <?php
+        }
+        //
+        ?>
 
       </div>
+      <ul class="list-group popup_content  " id="messeges_list" style=" width:300px; position:absolute; right:100px; display:none; top:4rem ">
+      <li class="list-group-item text-danger"  >No Messege Yet</li>
+      </ul>
     </nav>
   </section>
 
-  <script>
-    $(document).ready(function() {
-
-      $("#navbarDropdown").on("click", function() {
-        // console.log("Success");
-        $.ajax({
-          url: "read_message.php",
-          success: function(rsl) {
-            console.log(rsl);
-          }
-        });
-
-      });
-    });
-  </script>
 
   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 </body>
-<?php
-include '../include/read_message.php';
-?>
-

@@ -47,12 +47,12 @@
               <h5 class="widget-title">Contact Us<span></span></h5>
               <p class="text-center" style="color: orange;">You can Connect with us</p>
               <div class="emailfield">
-                <input type="text" name="email" value="Email">
-                <input type="text" name="message" placeholder="Comment">
+                <!-- <input type="text" name="email" value="Email"> -->
+                <textarea type="text" class="bg-dark message_field" name="message" placeholder="Write to us..."></textarea>
                 <!-- <input name="uri" type="hidden" value="arabiantheme"> -->
                 <!-- <input name="loc" type="hidden" value="en_US"> -->
-                <input class="submitbutton ripplelink" type="submit" value="Send">
-                </form>
+                <button class="submitbutton ripplelink submit_messege" id="submit_messege">Send</button>
+                
               </div>
             </div>
 
@@ -73,10 +73,11 @@
 </section>
 
 <!-- java script -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+<script src="../user/js/jQuery v3.6.0.js"></script>
+<script src="../user/js/bootstrap.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="../user/js/jquery-2.2.4.min.js"></script>
 <script src="../user/js/owl.carousel.min.js"></script>
 <script src="../user/js/index.js"></script>
