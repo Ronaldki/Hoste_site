@@ -1,13 +1,8 @@
 <?php
 include '../admin/config/connect.php';
-
-$sqlS = "SELECT * FROM hostel_tbl WHERE hostel_id IN
- (SELECT hostel_id FROM booking_tbl  GROUP BY  hostel_id ORDER BY count(hostel_id) DESC  ) ORDER BY hostel_id DESC LiMIT 10 ";
-
-   //  $sqlS =  "SELECT hostel_id FROM booking_tbl  GROUP BY  hostel_id ORDER BY count(hostel_id) DESC LIMIT 10 ";
-// $sql = "SELECT * FROM hostel_tbl WHERE hostel_id IN 
-//          (SELECT hostel_id FROM hostel_tbl GROUP BY hostel_id ORDER BY hostel_id DESC)";
-$result = mysqli_query($con, $sqlS);
+$sql = "SELECT * FROM  message_tbl JOIN user_tbl 
+ON message_tbl.user_id = user_tbl.user_id WHERE  message_tbl.user_id != '1000'";
+$result = mysqli_query($con, $sql);
 if (!$result) {
    echo mysqli_error($con);
 } else {

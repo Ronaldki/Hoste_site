@@ -13,7 +13,7 @@ if (isset($_POST['cancel'])) {
     if ($d1) {
         // starting by
         $sql = "INSERT INTO message_tbl(text, status, user_id, reciever_id)
-     VALUE('$messege', '$messege_status', '1000', '$user_id')";
+        VALUE('$messege', '$messege_status', '1000', '$user_id')";
         $sendd2 = mysqli_query($con, $sql);
         header('location: http://localhost/HostelApp/Hoste_site/admin/booking.php');
     }

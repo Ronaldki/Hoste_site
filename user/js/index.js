@@ -48,23 +48,28 @@ $('.image_wrapper').owlCarousel({
 
 $(document).ready(function () {
     $(".fa-bell").on("click", function () {
-        $('.popup_content').toggle();
+        $('#messeges_list').toggle()
         const xhr = new XMLHttpRequest()
         // console.log('hekkwjkjd');
         xhr.open('get', 'http://localhost/HostelApp/Hoste_site/include/read_message.php')
         xhr.onload = () => {
             // console.log('found///');
             // console.log(xhr.responseText);
-    
+            
         }
         xhr.send()
     });
     
 })
 
+// function toggle_bell() {
+//     $('.popup_content').toggle();
+    
+// }
+
 
 // selectiong aand displaying th mmesseg3r
-setInterval(auto_display, 1000)
+setInterval(auto_display, 4000)
 function auto_display() {
     const xhr = new XMLHttpRequest()
     xhr.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__read_ntificatipon.php')
@@ -77,6 +82,7 @@ function auto_display() {
             mess += `<li class="list-group-item"  >${data[i].text}</li>`
         }
         document.getElementById('messeges_list').innerHTML = mess
+        
     }
     xhr.send()
 }
