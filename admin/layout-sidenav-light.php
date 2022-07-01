@@ -53,8 +53,8 @@ include "../include/navbar.php";
                         <div class="col-md-6">
                             <div class="form-floating mb-3 mb-md-0">
                                 <select name="status" id="" class="form-control input-group-lg ">
-                                    <option value="Single" name="status" required>Single</option>
-                                    <option value="Double" name="status" required>Double</option>
+                                    <option value="Single" name="status" required>single</option>
+                                    <option value="Double" name="status" required>double</option>
                                 </select>
                                 <label for="inputFirstName">Status</label>
                             </div>

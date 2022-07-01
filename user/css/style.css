@@ -197,6 +197,7 @@ hr{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* text-transform: capitalize; */
     color: rgb(59, 58, 58);
+    margin-top: -300px;
     
 }
 .detail_wrapper{
@@ -314,7 +315,7 @@ color:white ;
 /* stylings for the cars that displays the hostels */
 #all_hostel{
     position: relative;
-    width: 70%;
+    width: 85%;
     margin: 100px auto;
 }
 

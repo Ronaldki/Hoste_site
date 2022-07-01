@@ -7,7 +7,7 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
 
     //first selectt all the email from 
-    $sql = "SELECT * FROM user_tbl WHERE email = '$email' AND status='active'";
+    $sql = "SELECT * FROM user_tbl WHERE email = '$email' AND status='active' AND type='super_admin'";
     $result = mysqli_query($con, $sql);
     if ($result) {
         if (mysqli_num_rows($result) == 0) {

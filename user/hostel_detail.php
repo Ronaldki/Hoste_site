@@ -14,8 +14,6 @@ $result2 = mysqli_query($con, $sql2);
 if ($result2) {
     $cont = mysqli_num_rows($result2);
     //   echo $cont;
-} else {
-    echo mysqli_error($con);
 }
 
 
@@ -35,7 +33,7 @@ if ($result2) {
         </div>
 
         <div class="hostel_details ">
-            <div class="user_image ">
+            <!-- <div class="user_image ">
                 <?php
                 if ($row['image'] = " ") {
                     echo "<i class ='fa fa-user fa-5x text-secondary'></i>";
@@ -48,12 +46,9 @@ if ($result2) {
 
                 }
                 ?>
-                <p class="name"><?php echo trim($row['fname']) . " " . trim($row['lname']); ?></p>
                 <button class="btn back text-light bg-primary py-2  px-3">write to <?php echo $row['fname'] . " " . $row['lname']; ?></button>
-
-            </div>
-
-
+                
+            </div> -->
 
             <div class="hostel_crdentials">
                 <!-- <p>prize: <span>ugx. 300000</span></p> -->
@@ -69,8 +64,13 @@ if ($result2) {
                     <div class="detail_value"> <?php echo trim($row['phone']); ?></div>
                 </div>
                 <div class="detail_wrapper">
+                    <div class="table_head ">Owner: </div>
+                    <div class="detail_value text-capitalize"> <?php echo trim($row['fname']) . " " . trim($row['lname']); ?></div>
+                </div>
+                <div class="detail_wrapper">
                     <div class="table_head">@Email: </div>
-                    <p class="detail_value"><?php echo trim($row['email']); ?></p>
+                    <div class="table_head"><?php echo trim($row['email']); ?></div>
+                    
                 </div>
                 <div class="detail_wrapper describe">descrptions</div>
                 <p><?php echo trim($row['hostel_description']); ?></p>
@@ -101,7 +101,7 @@ if ($result2) {
                 <div class="card">
                     <?php
                     // selecting single and duoble rom image from db
-                    if ($row['room_status'] == "Single") {
+                    if ($row['room_status'] == "single") {
                         $sqlImage = "SELECT * FROM image_tbl WHERE  hostel_id = '$hostel_id' AND status = 'Single'";
                         $sqlImageresult = mysqli_query($con, $sqlImage);
                         $imageRow = mysqli_fetch_assoc($sqlImageresult);
@@ -115,7 +115,7 @@ if ($result2) {
                         }
 
                         // checkin for double room
-                    } else if ($row['room_status'] == "Double") {
+                    } else if ($row['room_status'] == "double") {
                         $sqlImages = "SELECT * FROM image_tbl WHERE  hostel_id = '$hostel_id' AND status = 'Double'";
                         $sqlImageresults = mysqli_query($con, $sqlImages);
                         $imageRows = mysqli_fetch_assoc($sqlImageresults);
@@ -132,7 +132,7 @@ if ($result2) {
 
                     <div class="card_datails">
                         <div class="h5 name text-uppercase"><?php echo trim($row['room_name']); ?></div>
-                        <div class="status"><?php echo trim($row['room_status']); ?></div>
+                        <div class="status text-capitalize"><?php echo trim($row['room_status']).' '.'room'; ?></div>
                         <div class="prize">Ugx: <?php echo trim($row['room_fee']); ?></div>
                         <div class="action">
                             <button id="book_btn"><a href="">Book</a></button> &nbsp; &nbsp;

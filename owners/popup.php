@@ -22,7 +22,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Reply To <?php echo $row['fname'] . ' ' . $row['lname'] ?></h5>
                 </div>
-                <form class="list-group-item" method="POST" action='./config/__handle_reply.php'>
+                <form class="list-group-item" method="POST" action='./partials/__handle_reply.php'>
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Message:</label>

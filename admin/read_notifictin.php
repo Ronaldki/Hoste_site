@@ -14,34 +14,54 @@ include "../include/navbar.php";
         <div class="container-fluid px-4">
             <ul class="list-group">
                 <?php
-                $sql = "SELECT * FROM  message_tbl JOIN user_tbl 
-                ON message_tbl.user_id = user_tbl.user_id WHERE  message_tbl.user_id != '1000' ORDER BY message_tbl.messege_date DESC";
+                $myId = $_SESSION['owner_id'];
+                $sql = "SELECT * FROM user_tbl, message_tbl WHERE user_tbl.user_id=message_tbl.user_id 
+                AND message_tbl.user_id='$myId' AND message_tbl.user_id='$myId'
+                ORDER BY message_tbl.messege_date DESC";
                 $res = mysqli_query($con, $sql);
-                if(!$res){
+                if (!$res) {
                     echo mysqli_error($con);
-                }else{
-                while($row = mysqli_fetch_array($res)){?>
-                <div class="list-group-item">
-                    <div class=" name">
-                        <small class="text-secondary"> <i><?php echo $row['lname'].' '.$row['lname']?></i> </small> |
-                        <small class="text-secondary"> <i><?php echo $row['email']?></i> </small>
-                    </div>
-                    <div class="h5 text-secondary pt-2"><?php echo $row['text']?><span class="ml-5"> &nbsp; &nbsp; 
-                        <!-- <button class="btn btn-sm bg-primary  ml-5 text-light">Reply</button></span> -->
+                } else {
+                    while ($row = mysqli_fetch_array($res)) {
+                        $user_id = $row['user_id'];
+                        $name = $row['lname'];
+                        // select the ecact sender from db
+                        $id = $row['reciever_id'];
+                        // selecting receiver name from the database
+                        $name = "SELECT * FROM  user_tbl WHERE user_id = $id";
 
-                        <?php
-                        include ('reply.php');
-                        ?>
-                    </div>
-                    <small class="text-secondary"> <i><?php echo $row['messege_date']?></i> </small>
-                        
-                </div>
-                
+                        $exe = mysqli_query($con, $name);
+                        while ($names = mysqli_fetch_assoc($exe)) {
+                            $recivers = $names['fname'] . ' ' . $names['lname'];
+                            $recivers_email = $names['email'];
+                        }
+                ?>
+
+
+
+                        <div class="list-group-item">
+                            <div class=" name">
+                                <small class="text-secondary"> <i><?php echo $recivers; ?></i> </small> |
+                                <small class="text-secondary"> <i><?php echo $recivers_email; ?></i> </small>
+                            </div>
+                            <div class="h5 text-secondary pt-2"><?php echo $row['text'] ?><span class="ml-5"> &nbsp; &nbsp;
+                                    <!-- <button class="btn btn-sm bg-primary  ml-5 text-light">Reply</button></span> -->
+
+                                    <?php
+
+
+                                    include('reply.php');
+                                    ?>
+                            </div>
+                            <small class="text-secondary"> <i><?php echo $row['messege_date'] ?></i> </small>
+
+                        </div>
+
                 <?php
 
+                    }
                 }
-                }
-                
+
                 ?>
             </ul>
 

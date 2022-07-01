@@ -18,23 +18,33 @@ if (isset($_POST['sub'])) {
             $rsc = mysqli_query($con, $qyc);
             if (mysqli_num_rows($rsc) != 0) {
                 echo '<h6 class = "text-danger">You have already Booked </h6>';
-            } else { 
+            } else {
 
-                $qy = "SELECT * FROM booking_tbl WHERE room_id =  '$room_id' AND (Booking_status ='pending' OR Booking_status = 'confirmed')";
+                $qy = "SELECT * FROM booking_tbl WHERE room_id =  '$room_id'";
                 $rs = mysqli_query($con, $qy);
-
                 if (mysqli_num_rows($rs) == 0) {
-
                     $qry5 = "INSERT INTO booking_tbl (user_id, room_id, hostel_id, fee_paid, Booking_status) VALUES ( '$user_id', '$room_id', '$hostel_id', '$fees','$book_status')";
 
                     $qr = mysqli_query($con, $qry5);
-
                     echo '<h6 class = "text-success">Yourhave Successfully Booked ' . $ex_results["room_name"] . ' At a fee of Ugx: ' . $_POST["fees"] . '</h6>';
+                } else  if (mysqli_num_rows($rs) > 0) {
+                    // fetch th record
+                    while ($row = mysqli_fetch_assoc($rs)) {
+                        $bstatus = $row['Booking_status'];
+                        // checking for pending or booking
+                        if ($row['Booking_status'] == 'cancelled') {
+                            // update
+                            $update = "UPDATE booking_tbl SET user_id ='$user_id', room_id='$room_id', hostel_id='$hostel_id', fee_paid='$fees', Booking_status='$book_status' WHERE user_id='$user_id' AND Booking_status= 'cancelled'";
+                            $exe = mysqli_query($con, $update);
+                            echo '<h6 class = "text-success">Yourhave Successfully Booked ' . $ex_results["room_name"] . ' At a fee of Ugx: ' . $_POST["fees"] . '</h6>';
+                        }
+                    }
                 }
             }
         }
     }
 }
+
 
 // disable booking if room is booked...............
 
@@ -43,7 +53,7 @@ $book_status = "pending";
 $hostel_id = $_GET['hostel_id'];
 
 
-$book = "SELECT * FROM booking_tbl WHERE room_id =  '$room_id' ";
+$book = "SELECT * FROM booking_tbl WHERE room_id =  '$room_id' AND Booking_status != 'cancelled'";
 $bk_data = mysqli_query($con, $book);
 if (mysqli_num_rows($bk_data) == 0) {
 
