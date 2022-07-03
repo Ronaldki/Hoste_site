@@ -26,7 +26,7 @@ if(trim($rows['Booking_status'])=='pending'){?>
 }else {?>
 
 <form action="./partials/__owner_confirmation.php" method="post">
-    <input type="hidden" value="<?php echo $rows['booking_id'] ;?>" name="btn_id">
+    <input type="hidden" value="<?php echo $rows['user_id'] ;?>" name="user_id">
     <button class="btn btn-sm bg-danger rounded ">Cancelled</button>
     <button class="btn btn-sm bg-primary rounded"  name="confirm">Confirm</button>
 </form>

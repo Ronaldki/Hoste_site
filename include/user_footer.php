@@ -48,10 +48,11 @@
               <p class="text-center" style="color: orange;">You can Connect with us</p>
               <div class="emailfield">
                 <!-- <input type="text" name="email" value="Email"> -->
-                <textarea type="text" class="bg-dark message_field" name="message" placeholder="Write to us..."></textarea>
+                <textarea type="text" class="bg-dark message_field w-75" name="message" placeholder="Write to us..."></textarea>
                 <!-- <input name="uri" type="hidden" value="arabiantheme"> -->
                 <!-- <input name="loc" type="hidden" value="en_US"> -->
-                <button class="submitbutton ripplelink submit_messege" id="submit_messege">Send</button>
+                <br>
+                <div class="bg-warning text-secondary w-75 text-center pointer" id="submit_messege">Send</div>
                 
               </div>
             </div>

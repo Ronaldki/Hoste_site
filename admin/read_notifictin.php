@@ -14,35 +14,23 @@ include "../include/navbar.php";
         <div class="container-fluid px-4">
             <ul class="list-group">
                 <?php
-                $myId = $_SESSION['owner_id'];
-                $sql = "SELECT * FROM user_tbl, message_tbl WHERE user_tbl.user_id=message_tbl.user_id 
-                AND message_tbl.user_id='$myId' AND message_tbl.user_id='$myId'
-                ORDER BY message_tbl.messege_date DESC";
+                $myId = $_SESSION['admin_login_id'];
+                $sql = "SELECT * FROM user_tbl, message_tbl WHERE (user_tbl.user_id=message_tbl.reciever_id OR user_tbl.user_id=message_tbl.user_id )
+                AND (message_tbl.user_id='$myId' OR message_tbl.reciever_id='$myId' OR message_tbl.reciever_id='1000')
+                GROUP BY message_tbl.id ORDER BY message_tbl.messege_date DESC";
                 $res = mysqli_query($con, $sql);
                 if (!$res) {
                     echo mysqli_error($con);
                 } else {
-                    while ($row = mysqli_fetch_array($res)) {
-                        $user_id = $row['user_id'];
-                        $name = $row['lname'];
-                        // select the ecact sender from db
-                        $id = $row['reciever_id'];
-                        // selecting receiver name from the database
-                        $name = "SELECT * FROM  user_tbl WHERE user_id = $id";
-
-                        $exe = mysqli_query($con, $name);
-                        while ($names = mysqli_fetch_assoc($exe)) {
-                            $recivers = $names['fname'] . ' ' . $names['lname'];
-                            $recivers_email = $names['email'];
-                        }
-                ?>
-
-
+                    while ($row = mysqli_fetch_array($res)) {?>
 
                         <div class="list-group-item">
                             <div class=" name">
-                                <small class="text-secondary"> <i><?php echo $recivers; ?></i> </small> |
-                                <small class="text-secondary"> <i><?php echo $recivers_email; ?></i> </small>
+                                <small class="text-secondary">
+                                     <i><?php echo $row['fname'].' '. $row['lname']; ?></i> |
+                                     <i><?php echo $row['email']; ?></i> | 
+                                     <i><?php echo $row['phone']; ?></i> |
+                                </small>
                             </div>
                             <div class="h5 text-secondary pt-2"><?php echo $row['text'] ?><span class="ml-5"> &nbsp; &nbsp;
                                     <!-- <button class="btn btn-sm bg-primary  ml-5 text-light">Reply</button></span> -->
@@ -69,10 +57,11 @@ include "../include/navbar.php";
     </main>
     <?php
 
-
-
     include('./config/__register_house_owners.php');
     include "../include/footer.php";
+
+    
+    
     ?>
 </div>
 

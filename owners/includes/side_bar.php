@@ -1,12 +1,12 @@
 <?php
 session_start();
 $con = mysqli_connect("localhost", "root", "", "beacon_db");
+$session = $_SESSION['owner_id'];
 
 // if session is nt set, redirect to login page
 if (!isset($_SESSION['owner_id'])) {
     header('location:index.php');
 }
-
 
 ?>
 
@@ -40,8 +40,8 @@ if (!isset($_SESSION['owner_id'])) {
             </div>
         </form>
         <!-- Navbar-->
-        <a href="http://localhost/HostelApp/Hoste_site/owners/notification.php"><i class="fa fa-bell fa-2x text-light"></i></a>
-
+        <a href="http://localhost\HostelApp\Hoste_site\owners\partials\__update_notification.php"><i class="fa fa-bell fa-2x text-light"></i></a>
+        
 
         <a>
             <button type="button" class="btn text-light  position-relative">
@@ -116,7 +116,10 @@ if (!isset($_SESSION['owner_id'])) {
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                    <?php 
+                    // the user id
+                    echo $_SESSION['user_name'];
+                    ?>
                 </div>
             </nav>
         </div>

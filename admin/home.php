@@ -27,7 +27,7 @@ include "../include/navbar.php";
 
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="read_notifictin.php" style="text-decoration:none">View Details</a>
+                            <a class="small text-white stretched-link" href="http://localhost/HostelApp\Hoste_site\admin\config\__update_notification.php" style="text-decoration:none">View Details</a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>

@@ -12,53 +12,44 @@ include "./includes/side_bar.php";
 
         <h1 class="my-4 mx-2">Notifications</h1>
         <div class="container-fluid px-4">
-            <ul class="list-group">
-                <!-- selecting all the messages from the db -->
+        <ul class="list-group">
                 <?php
                 $myId = $_SESSION['owner_id'];
-                
-                $sql = "SELECT * FROM user_tbl, message_tbl WHERE user_tbl.user_id=message_tbl.user_id 
-                AND message_tbl.user_id='$myId' AND message_tbl.user_id='$myId'
-                ORDER BY message_tbl.messege_date DESC";
+                $sql = "SELECT * FROM user_tbl, message_tbl WHERE (user_tbl.user_id=message_tbl.reciever_id OR user_tbl.user_id=message_tbl.user_id )
+                AND (message_tbl.user_id='$myId' OR message_tbl.reciever_id='$myId')
+                GROUP BY message_tbl.id ORDER BY message_tbl.messege_date DESC";
                 $res = mysqli_query($con, $sql);
-                if(!$res){
+                if (!$res) {
                     echo mysqli_error($con);
-                }else{
-                while($row = mysqli_fetch_array($res)){
-                    $id = $row['reciever_id'];
-                    // echo $id;
-                    // selecting receiver name from the database
-                    $name = "SELECT * FROM  user_tbl 
-                    WHERE user_id = $id";
-                
-                    $exe = mysqli_query($con,$name);
-                    while($names = mysqli_fetch_assoc($exe)){
-                        $recivers = $names['fname'].' '.$names['lname'];
-                        $recivers_email = $names['email'];
-                    
-                    }
-                    ?>
-                <div class="list-group-item">
-                    <div class=" name">
-                        <small class="text-secondary"> <i><?php echo $recivers;?></i> </small> |
-                        <small class="text-secondary"> <i><?php echo $recivers_email;?></i> </small>
-                    </div>
-                    <div class="h5 text-secondary pt-2"><?php echo $row['text']?><span class="ml-5"> &nbsp; &nbsp; 
-                        <!-- <button class="btn btn-sm bg-primary  ml-5 text-light">Reply</button></span> -->
+                } else {
+                    while ($row = mysqli_fetch_array($res)) {?>
 
-                        <?php
-                        include ('popup.php');
-                        ?>
-                    </div>
-                    <small class="text-secondary"> <i><?php echo $row['messege_date']?></i> </small>
-                        
-                </div>
-                
+                        <div class="list-group-item">
+                            <div class=" name">
+                                <small class="text-secondary">
+                                     <i><?php echo $row['fname'].' '. $row['lname']; ?></i> |
+                                     <i><?php echo $row['email']; ?></i> | 
+                                     <i><?php echo $row['phone']; ?></i> |
+                                </small>
+                            </div>
+                            <div class="h5 text-secondary pt-2"><?php echo $row['text'] ?><span class="ml-5"> &nbsp; &nbsp;
+                                    <!-- <button class="btn btn-sm bg-primary  ml-5 text-light">Reply</button></span> -->
+
+                                    <?php
+
+
+                                    include('popup.php');
+                                    ?>
+                            </div>
+                            <small class="text-secondary"> <i><?php echo $row['messege_date'] ?></i> </small>
+
+                        </div>
+
                 <?php
 
+                    }
                 }
-                }
-                
+
                 ?>
             </ul>
 
@@ -66,10 +57,12 @@ include "./includes/side_bar.php";
     </main>
     <?php
 
-
-
     // include('./config/__register_house_owners.php');
     include "./includes/footer.php";
+
+    // also update the status in the messege tbl setting status to 0
+    $sql= "UPDATE message_tbl SETstatus='0' WHERE reciever_id= '$myId' ";
+    $run = mysqli_query($con, $sql);
     ?>
 </div>
 

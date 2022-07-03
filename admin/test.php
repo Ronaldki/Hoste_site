@@ -1,12 +1,15 @@
 <?php
+session_start();
+$myId = $_SESSION['admin_login_id'];
+
 include '../admin/config/connect.php';
-$sql = "SELECT * FROM  message_tbl JOIN user_tbl 
-ON message_tbl.user_id = user_tbl.user_id WHERE  message_tbl.user_id != '1000'";
+$sql = "SELECT * FROM user_tbl, message_tbl WHERE (user_tbl.user_id=message_tbl.reciever_id OR user_tbl.user_id=message_tbl.user_id )
+AND (message_tbl.user_id='$myId' OR message_tbl.reciever_id='$myId' OR message_tbl.reciever_id='1000')
+GROUP BY message_tbl.id ORDER BY message_tbl.messege_date DESC";
 $result = mysqli_query($con, $sql);
 if (!$result) {
    echo mysqli_error($con);
 } else {
    $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
    echo json_encode($row);
 }

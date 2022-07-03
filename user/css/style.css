@@ -20,17 +20,7 @@ hr{
     border: none;
 
 }
-/* .nav-icons{
-    height: 30px;
-    width: 50px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-} */
+
 .fa-bell{
     position: relative;
 }
@@ -46,6 +36,9 @@ hr{
 .slide_image_parent{
     position: relative;
 
+}
+.pointer{
+cursor: pointer;
 }
 .dim_backgroud{
     overflow: hidden;

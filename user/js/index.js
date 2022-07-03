@@ -51,7 +51,7 @@ $(document).ready(function () {
         $('#messeges_list').toggle()
         const xhr = new XMLHttpRequest()
         // console.log('hekkwjkjd');
-        xhr.open('get', 'http://localhost/HostelApp/Hoste_site/include/read_message.php')
+        xhr.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__update_mseege_status.php')
         xhr.onload = () => {
             // console.log('found///');
             // console.log(xhr.responseText);
@@ -62,25 +62,41 @@ $(document).ready(function () {
     
 })
 
-// function toggle_bell() {
-//     $('.popup_content').toggle();
-    
-// }
 
 
-// selectiong aand displaying th mmesseg3r
-setInterval(auto_display, 4000)
-function auto_display() {
+// counting the number of messeges that belons to the user
+setInterval(auto_count, 1000)
+function auto_count() {
     const xhr = new XMLHttpRequest()
-    xhr.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__read_ntificatipon.php')
+    xhr.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__count_ntificatipon.php')
     xhr.onload = () => {
         let mess = '';
         let data = JSON.parse(xhr.responseText);
         // console.log(data);
-        document.getElementById('count_messe').innerHTML = data.length;
+        document.getElementById('count_messe').innerHTML = data.length;        
+    }
+    xhr.send()
+}
+
+//disaying the mmesseges on the popup to the user 
+setInterval(auto_display, 1000)
+function auto_display() {
+    const xhr = new XMLHttpRequest()
+    xhr.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__read_notification.php')
+    xhr.onload = () => {
+        let mess = '';
+        let data = JSON.parse(xhr.responseText);
         for (let i = 0; i < data.length; i++) {
-            mess += `<li class="list-group-item"  >${data[i].text}</li>`
-        }
+            mess += `<li class="list-group-item text-secondary"  >
+            <p class='text_dark '> <small> 
+            <i> ${data[i].fname+' '+data[i].lname}</i> |  
+            <i> ${data[i].email}</i> | 
+            <i> ${data[i].phone}</i> | 
+            </small></p>
+            <p class=' h6'> ${data[i].text}</p>
+            <p class=' '><small><i> ${data[i].messege_date}</i></small></p>
+         
+         </li>`        }
         document.getElementById('messeges_list').innerHTML = mess
         
     }
@@ -93,7 +109,8 @@ function auto_display() {
 // send messge do databsee
 document.getElementById('submit_messege').addEventListener('click', (e) => {
     e.preventDefault()
-    var message_field = document.querySelector('.message_field').value
+    var message_fields = document.querySelector('.message_field')
+    var message_field = message_fields.value
     xhr.open('get', `http://localhost/HostelApp/Hoste_site/user/config/__send_messege.php?mess=${message_field}`)
     xhr.onload = () => {
         // console.log('found');

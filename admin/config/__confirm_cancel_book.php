@@ -2,6 +2,8 @@
 
 include "connect.php";
 // update table if cancel button clicked..........
+$sess = $_SESSION['owner_id'];
+
 if (isset($_POST['cancel'])) {
 
     $booking_id = $_POST['btn_id'];
@@ -13,7 +15,7 @@ if (isset($_POST['cancel'])) {
     if ($d1) {
         // starting by
         $sql = "INSERT INTO message_tbl(text, status, user_id, reciever_id)
-        VALUE('$messege', '$messege_status', '1000', '$user_id')";
+        VALUE('$messege', '$messege_status', '$sess', '$user_id')";
         $sendd2 = mysqli_query($con, $sql);
         header('location: http://localhost/HostelApp/Hoste_site/admin/booking.php');
     }
@@ -31,8 +33,8 @@ if (isset($_POST['confirm'])) {
         $messege_status = '1';
         $messege = 'Your booking was confirmed';
         // starting by
-        $sql = "INSERT INTO message_tbl(text, status, user_id,reciever_id)
-     VALUE('$messege', '$messege_status', '1000', '$user_id')";
+        $sql = "INSERT INTO message_tbl(text, status, user_id, reciever_id)
+        VALUE('$messege', '$messege_status', '$sess', '$user_id')";
         $sendd2 = mysqli_query($con, $sql);
         header('location: http://localhost/HostelApp/Hoste_site/admin/booking.php');
     }

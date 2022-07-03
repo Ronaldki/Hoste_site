@@ -18,7 +18,7 @@ include('../../admin/config/connect.php');
             
             if(password_verify( $password, $db_password) == 1){
                  $_SESSION['owner_id']= $rows['user_id'];
-                $_SESSION['user_name'] = $rows['fname'];
+                $_SESSION['user_name'] = $rows['fname'].' '.$rows['fname'];
                 echo mysqli_error($con);
                 header('location:../home.php');
             }else{

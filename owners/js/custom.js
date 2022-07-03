@@ -6,9 +6,14 @@ function damin_notification() {
         .then(data => {
             let datas = data;
             let num = datas.length
+
             if(parseInt(num)<10){
                 num ='0'+num;
                 document.getElementById("num_notification").innerHTML=num
+            }else{
+                num ='0'+num;
+                document.getElementById("num_notification").innerHTML=num
+
             }
         
         })
