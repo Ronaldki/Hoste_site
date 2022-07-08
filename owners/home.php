@@ -6,6 +6,7 @@ include('./includes/side_bar.php');
         <div class="container-fluid text-secondary px-4">
             <h3 class="mt-4">HOSTELS </h3>
             <div class="wrapper d-flex">
+                <a href="http://localhost\HostelApp\Hoste_site\owners\partials\__update_notification.php">notification</a>
 
             <?php
             $user_id =  $_SESSION['owner_id'];

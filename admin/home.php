@@ -19,7 +19,7 @@ include "../include/navbar.php";
                 <div class="col-xl-3 col-md-6">
                     <div class="card bg-primary text-white mb-4">
                         <div class="card-body h5"><i class="fa fa-bell fa-2x"></i>
-                            <span class="h3 text-warning ml-2" ></span>
+                            <span class="h3 text-warning ml-2"></span>
 
                             <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger" id="num_notification">
                                 <span class="visually-hidden">unread messages</span>

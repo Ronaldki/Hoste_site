@@ -64,16 +64,19 @@ $(document).ready(function () {
 
 
 
-// counting the number of messeges that belons to the user
+// counting the number of messeges that belongs to the user
 setInterval(auto_count, 1000)
 function auto_count() {
     const xhr = new XMLHttpRequest()
     xhr.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__count_ntificatipon.php')
     xhr.onload = () => {
-        let mess = '';
-        let data = JSON.parse(xhr.responseText);
-        // console.log(data);
-        document.getElementById('count_messe').innerHTML = data.length;        
+        let data = parseInt(xhr.responseText)
+
+        if(data!=0){
+            let count = data < 10?'0' + data:data
+            document.getElementById('count_messe').innerHTML = count;        
+
+        }
     }
     xhr.send()
 }
@@ -119,8 +122,6 @@ document.getElementById('submit_messege').addEventListener('click', (e) => {
     message_field == '';
 
 })
-// document.querySelector('.message_field').
-// 
 
 
 
