@@ -1,10 +1,11 @@
 <?php
 session_start();
-$myId = $_SESSION['admin_login_id'];
+// $myId = $_SESSION['admin_login_id'];
 
 include '../admin/config/connect.php';
-$sql = "SELECT * FROM user_tbl, message_tbl WHERE (user_tbl.user_id=message_tbl.reciever_id OR user_tbl.user_id=message_tbl.user_id )
-AND (message_tbl.user_id='$myId' OR message_tbl.reciever_id='$myId' OR message_tbl.reciever_id='1000')
+$myId = $_SESSION['owner_id'];
+$sql = "SELECT * FROM user_tbl, message_tbl WHERE (user_tbl.user_id = message_tbl.reciever_id OR user_tbl.user_id=message_tbl.user_id )
+and ( message_tbl.user_id='$myId' OR message_tbl.reciever_id='$myId')
 GROUP BY message_tbl.id ORDER BY message_tbl.messege_date DESC";
 $result = mysqli_query($con, $sql);
 if (!$result) {

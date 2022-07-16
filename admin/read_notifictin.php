@@ -15,14 +15,17 @@ include "../include/navbar.php";
             <ul class="list-group">
                 <?php
                 $myId = $_SESSION['admin_login_id'];
-                $sql = "SELECT * FROM user_tbl, message_tbl WHERE (user_tbl.user_id=message_tbl.reciever_id OR user_tbl.user_id=message_tbl.user_id )
-                AND (message_tbl.user_id='$myId' OR message_tbl.reciever_id='$myId' OR message_tbl.reciever_id='1000')
+                $sql = "SELECT * FROM user_tbl, message_tbl WHERE (user_tbl.user_id = message_tbl.reciever_id OR user_tbl.user_id=message_tbl.user_id )
+                and ( message_tbl.user_id='$myId' OR message_tbl.reciever_id='$myId' OR message_tbl.reciever_id='1000')
                 GROUP BY message_tbl.id ORDER BY message_tbl.messege_date DESC";
                 $res = mysqli_query($con, $sql);
                 if (!$res) {
                     echo mysqli_error($con);
                 } else {
-                    while ($row = mysqli_fetch_array($res)) {?>
+                    
+                    while ($row = mysqli_fetch_array($res)) {
+                        echo  $row['user_id'];
+                        ?>
 
                         <div class="list-group-item">
                             <div class=" name">
@@ -30,15 +33,20 @@ include "../include/navbar.php";
                                      <i><?php echo $row['fname'].' '. $row['lname']; ?></i> |
                                      <i><?php echo $row['email']; ?></i> | 
                                      <i><?php echo $row['phone']; ?></i> |
+                                     <i><?php echo $row['type']; ?></i> |
                                 </small>
                             </div>
                             <div class="h5 text-secondary pt-2"><?php echo $row['text'] ?><span class="ml-5"> &nbsp; &nbsp;
                                     <!-- <button class="btn btn-sm bg-primary  ml-5 text-light">Reply</button></span> -->
 
                                     <?php
+                                    if( $row['type']!='super_admin'){
+                                        include('reply.php');
+                                        
+                                    }else{
+                                        echo '';
+                                    }
 
-
-                                    include('reply.php');
                                     ?>
                             </div>
                             <small class="text-secondary"> <i><?php echo $row['messege_date'] ?></i> </small>

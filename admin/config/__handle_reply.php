@@ -6,7 +6,7 @@ $reciever = $_POST['user_id'];
 $messege = $_POST['messege'];
 if (!empty($messege)) {
     $sql = "INSERT INTO message_tbl(text, status, user_id, reciever_id)
-        VALUE('$messege', '1', '$reciever', '$user_id')";
+        VALUE('$messege', '1', '$user_id', '$reciever')";
     $sendd2 = mysqli_query($con, $sql);
     if ($sendd2) {
         header('location: http://localhost/HostelApp/Hoste_site/admin/read_notifictin.php');

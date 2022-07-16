@@ -15,8 +15,8 @@ include "./includes/side_bar.php";
         <ul class="list-group">
                 <?php
                 $myId = $_SESSION['owner_id'];
-                $sql = "SELECT * FROM user_tbl, message_tbl WHERE (user_tbl.user_id=message_tbl.reciever_id OR user_tbl.user_id=message_tbl.user_id )
-                AND (message_tbl.user_id='$myId' OR message_tbl.reciever_id='$myId')
+                $sql = "SELECT * FROM user_tbl, message_tbl WHERE (user_tbl.user_id = message_tbl.reciever_id OR user_tbl.user_id=message_tbl.user_id )
+                and ( message_tbl.user_id='$myId' OR message_tbl.reciever_id='$myId' OR message_tbl.reciever_id='1000')
                 GROUP BY message_tbl.id ORDER BY message_tbl.messege_date DESC";
                 $res = mysqli_query($con, $sql);
                 if (!$res) {
@@ -27,18 +27,22 @@ include "./includes/side_bar.php";
                         <div class="list-group-item">
                             <div class=" name">
                                 <small class="text-secondary">
-                                     <i><?php echo $row['fname'].' '. $row['lname']; ?></i> |
-                                     <i><?php echo $row['email']; ?></i> | 
-                                     <i><?php echo $row['phone']; ?></i> |
+                                     <i><?php echo $row['fname'].' '. $row['lname']; ?></i> /
+                                     <i><?php echo $row['email']; ?></i> / 
+                                     <i><?php echo $row['phone']; ?></i> /
                                 </small>
                             </div>
                             <div class="h5 text-secondary pt-2"><?php echo $row['text'] ?><span class="ml-5"> &nbsp; &nbsp;
                                     <!-- <button class="btn btn-sm bg-primary  ml-5 text-light">Reply</button></span> -->
 
                                     <?php
+                                    if( $row['type']!='house_owner'){
+                                        include('popup.php');
+                                        
+                                    }else{
+                                        echo '';
+                                    }
 
-
-                                    include('popup.php');
                                     ?>
                             </div>
                             <small class="text-secondary"> <i><?php echo $row['messege_date'] ?></i> </small>

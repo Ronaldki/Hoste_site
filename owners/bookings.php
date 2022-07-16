@@ -77,8 +77,6 @@ include "./includes/side_bar.php";
                                         <td class="justify-between">
 
                                             <?php
-
-
                                             include './booking_form.php';
                                             ?>
 

@@ -55,7 +55,7 @@ $con = mysqli_connect("localhost", "root", "", "beacon_db");
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search </button>
         </form>
-        <a class="nav-link text-light "><i class="fa fa-shopping-cart text-light"></i>
+        <a class="nav-link text-light " ><i class="fa fa-shopping-cart text-light" style="cursor:pointer ;" ></i>
           <!-- Cart functionality.... -->
           <?php
           if (!isset($_SESSION['login_id'])) {
@@ -79,9 +79,9 @@ $con = mysqli_connect("localhost", "root", "", "beacon_db");
           <!-- <i class="fa fa-envelope"></i> -->
 
           <li class="nav-item dropdown ">
-            <a class="nav-link " id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link " id="navbarDropdown" aria-haspopup="true" aria-expanded="false" >
               <!-- Inbox -->
-              <i class="fa fa-bell fa-2x text-white" id= 'bell_icon'></i><span class="badge badge-danger notificationicon " id="count_messe"></span>
+              <i class="fa fa-bell fa-2x text-white" id= 'bell_icon' style="cursor:pointer ;"></i><span class="badge badge-danger notificationicon " id="count_messe"></span>
 
             </a>
 

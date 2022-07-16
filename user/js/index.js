@@ -45,19 +45,19 @@ $('.image_wrapper').owlCarousel({
     }
 })
 
-
+// update messege status
 $(document).ready(function () {
     $(".fa-bell").on("click", function () {
         $('#messeges_list').toggle()
-        const xhr = new XMLHttpRequest()
-        // console.log('hekkwjkjd');
-        xhr.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__update_mseege_status.php')
-        xhr.onload = () => {
-            // console.log('found///');
-            // console.log(xhr.responseText);
+        const xhrs = new XMLHttpRequest()
+        console.log('hekkwjkjd');
+        xhrs.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__update_mseege_status.php')
+        xhrs.onload = () => {
+            console.log('found///');
+            console.log(xhr.responseText);
             
         }
-        xhr.send()
+        xhrs.send()
     });
     
 })
@@ -91,11 +91,11 @@ function auto_display() {
         let data = JSON.parse(xhr.responseText);
         for (let i = 0; i < data.length; i++) {
             mess += `<li class="list-group-item text-secondary"  >
-            <p class='text_dark '> <small> 
+            <div class='text_dark '> <small> 
             <i> ${data[i].fname+' '+data[i].lname}</i> |  
             <i> ${data[i].email}</i> | 
             <i> ${data[i].phone}</i> | 
-            </small></p>
+            </small></div>
             <p class=' h6'> ${data[i].text}</p>
             <p class=' '><small><i> ${data[i].messege_date}</i></small></p>
          

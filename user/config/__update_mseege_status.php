@@ -7,5 +7,6 @@
 
           $qr = "UPDATE message_tbl SET status ='0' WHERE  reciever_id = '$sss'";
           $rs = mysqli_query($con, $qr);
+          echo $sss;
           // 
         }

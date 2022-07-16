@@ -108,10 +108,7 @@ if (!isset($_SESSION['owner_id'])) {
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
                         </a>
-                        <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
-                        </a>
+                       
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">

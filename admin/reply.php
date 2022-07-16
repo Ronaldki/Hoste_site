@@ -30,7 +30,8 @@
                         </div>
 
                     </div>
-                    <input type="hidden" name="user_id" value="<?php echo $row['user_id'] ?>">
+                    <?php echo $row['user_id']; ?>
+                    <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
                     <div class="modal-footer">
                         <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         <button class="btn btn-primary">Send</button>
