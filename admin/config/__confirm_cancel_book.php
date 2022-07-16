@@ -19,6 +19,7 @@ if (isset($_POST['cancel'])) {
         header('location: http://localhost/HostelApp/Hoste_site/admin/booking.php');
     }
 }
+
 // update table if comfirm button clicked..........
 if (isset($_POST['confirm'])) {
 
