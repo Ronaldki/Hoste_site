@@ -1,28 +1,31 @@
 <?php
-include "../include/user_nav_bar.php";
-include "../admin/config/connect.php";
-// 
+if (isset($_GET['search'])) {
+  $search = $_GET['search'];
+
+  include "../include/user_nav_bar.php";
+  include "../admin/config/connect.php";
+  // 
 ?>
 
 
 
-<!-- section for popular hostel -->
+  <!-- section for popular hostel -->
 
 
 
-<!--  -->
+  <!--  -->
   <?php
-    include 'sort_hostel.php';
-    ?>
-<!-- section for displaying all hotels -->
-<section id="all_hostel">
-  <div class="h4 text-center my-3 text-primary">SEARCH RESULT</div>
-  <hr class="w-25 bg-danger">
-  <!-- <div class=""> -->
+
+  include 'sort_hostel.php';
+  ?>
+  <!-- section for displaying all hotels -->
+  <section id="all_hostel">
+    <div class="h4 text-center my-3 text-primary">SEARCH RESULT</div>
+    <hr class="w-25 bg-danger">
+    <!-- <div class=""> -->
     <div class="all_hostel_container px-5 my-5">
 
       <?php
-      $search = $_GET['search'];
       $sql = "SELECT * FROM hostel_tbl WHERE hostel_name LIKE '%$search%' OR hostel_description LIKE '%$search%' ";
       $result = mysqli_query($con, $sql);
       if (mysqli_num_rows($result) > 0) {
@@ -47,12 +50,15 @@ include "../admin/config/connect.php";
       }
       ?>
     </div>
-  <!-- </div> -->
-</section>
+    <!-- </div> -->
+  </section>
 
-<!-- the footer section -->
+  <!-- the footer section -->
 <?php
-include "../include/user_footer.php";
+  include "../include/user_footer.php";
+} else {
+  echo '<h3>Error, Cannot get page!!!</h3>';
+}
 ?>
 
 <!-- ........................................................ -->

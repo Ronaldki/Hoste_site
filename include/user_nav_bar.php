@@ -22,7 +22,7 @@ $con = mysqli_connect("localhost", "root", "", "beacon_db");
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-      <a class="navbar-brand w-25" href="home.php">Beacon Hostel</a>
+      <a class="navbar-brand w-25" href="http://localhost/HostelApp/Hoste_site/user/index.php">Beacon Hostel</a>
       <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </div>

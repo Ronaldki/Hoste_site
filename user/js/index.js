@@ -124,5 +124,9 @@ document.getElementById('submit_messege').addEventListener('click', (e) => {
 })
 
 
+// giving active color to thr active page
+//  alert('working')
+// const page = "<?php echo $page ?>"; 
+// alert(page)
 
 

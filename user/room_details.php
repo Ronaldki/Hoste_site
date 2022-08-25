@@ -1,26 +1,13 @@
 <?php
+if (isset($_GET['hostel_id']) and isset($_GET['room_id'])) {
+    $htid = $_GET['hostel_id'];
+
+    
 include "../include/user_nav_bar.php";
 include "../admin/config/connect.php";
 
 ?>
-<?php
-// $hostel_id = $_GET['hostel_id'];
-// $sql1 = "SELECT * FROM user_tbl JOIN hostel_tbl ON user_tbl.user_id = hostel_tbl.user_id WHERE hostel_tbl.hostel_id = '$hostel_id'";
-// $result = mysqli_query($con, $sql1);
-// $row = mysqli_fetch_assoc($result);
 
-// //   conting the number of rooms fom the hostel
-// $sql2 = "SELECT * FROM room_tbl WHERE hostel_id = $hostel_id";
-// $result2 = mysqli_query($con, $sql2);
-// if ($result2) {
-    //     $cont = mysqli_num_rows($result2);
-    //     //   echo $cont;
-    // } else {
-        //     echo mysqli_error($con);
-        // }
-        
-        
-        ?>
 <!DOCTYPE html>
 <html lang="en">
     
@@ -42,7 +29,6 @@ include "../admin/config/connect.php";
         <div class="header_div">
             <h3>
                 <?php
-                $htid = $_GET['hostel_id'];
                
                 $sql = "SELECT * FROM hostel_tbl WHERE hostel_id = '$htid'";
                 $rslts = mysqli_query($con, $sql);
@@ -68,7 +54,10 @@ include "../admin/config/connect.php";
                 $row = mysqli_fetch_assoc($rslt);
 
                 ?>
-                <img src="../admin/upload/<?php echo trim($row['image_name']); ?>" alt="" id="large_images">
+                <img src="../admin/upload/<?php 
+                   
+                    echo trim( $row['image_name']? $row['image_name']:'');
+                     ?>" alt="" id="large_images">
 
                 <div class="image_wrapper owl-carousel owl-theme">
                     
@@ -77,8 +66,7 @@ include "../admin/config/connect.php";
                     $rslt = mysqli_query($con, $sql);
                     while ($data = mysqli_fetch_assoc($rslt)) { ?>
 
-
-                        <img src="../admin/upload/<?php echo trim($data['image_name']); ?>" width="60px" height="60px" alt="" class="scralling_detail_image">
+                        <img src="../admin/upload/<?php echo  trim($data['image_name']); ?>" width="60px" height="60px" alt="" class="scralling_detail_image">
                     <?php
                     }
                     ?>
@@ -96,6 +84,7 @@ include "../admin/config/connect.php";
                     // $qry = "SELECT * FROM room_tbl WHERE hostel_id = '$hid'"; 
                     $roomid = $_GET['room_id'];
                     $qry =  "SELECT * FROM  room_tbl JOIN hostel_tbl ON hostel_tbl.hostel_id = room_tbl.hostel_id 
+                            JOIN booking_tbl ON booking_tbl.room_id = room_tbl.room_id 
                             WHERE hostel_tbl.hostel_id = '$hid' AND room_tbl.room_id= '$roomid'";
                     $ex = mysqli_query($con, $qry);
                     
@@ -103,33 +92,33 @@ include "../admin/config/connect.php";
                         echo mysqli_error($con);
                     }
                     $ex_results = mysqli_fetch_assoc($ex);
-                    ?>
 
+                    if(mysqli_num_rows($ex)===1){?>
+                    
                     <div class="detail_wrapper">
                         <div class="table_head">Room Name</div>
-                        <p class="detail_value "><?php echo $ex_results['room_name']; ?></p>
+                        <p class="detail_value text-capitalize"><?php echo $ex_results['room_name']? $ex_results['room_name']:'none' ;?></p>
                     </div>
                     <div class="detail_wrapper">
                         <div class="table_head">Room size</div>
-                        <p class="detail_value "><?php echo $ex_results['room_status']; ?></p>
+                        <p class="detail_value text-capitalize badge bg-info px-2 text-light disabled"><?php echo $ex_results['room_status']; ?></p>
                     </div>
                     <div class="detail_wrapper">
                         <div class="table_head ">Prize: </div>
-                        <div class="detail_value">Ugx:<?php echo $ex_results['room_fee']; ?></div>
+                        <div class="detail_value ">Ugx:<?php echo $ex_results['room_fee']; ?></div>
                     </div>
                     <div class="detail_wrapper">
                         <div class="table_head">Status: </div>
-                        <p class="detail_value">not booked</p>
+                        <p class="detail_value text-capitalize badge bg-warning px-2 text-light"><?php echo $ex_results['Booking_status']; ?></p>
                     </div>
                     <div class="detail_wrapper describe">descrptions</div>
                     <p><?php echo $ex_results['hostel_description']; ?></p>
-                    
-                    <?php include "./config/__booking.php";?>
-                    <!-- <form class="btn-container" action=""> -->
-                        <!-- <button class="btn btn-primary w-25">Book</button> -->
-
-
-                        
+                    <?php
+                    include "./config/__booking.php";
+                    }else{
+                        echo '<h3>An error occurred while fetching room details ...</h3>';
+                    }?>
+                   
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -211,3 +200,9 @@ include "../admin/config/connect.php";
 
 
 </html>
+<?php
+}else{
+    echo'<h3>Error, Cannot get page!!!</h3>';
+
+}
+?>

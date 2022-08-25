@@ -5,10 +5,18 @@ include "../admin/config/connect.php";
 // <!-- section for popular hostel -->
 
     include 'sort_hostel.php';
-    $min = $_GET['min'];
-    $max = $_GET['max'];
-    $status = $_GET['status'];
-    ?>
+    if (isset($_GET['min']) && isset($_GET['max']) && isset($_GET['status'])){
+
+      $min = $_GET['min'];
+      $max =$_GET['max'];
+      $status = $_GET['status'];
+    }else{
+
+      $min = '';
+      $max ='';
+      $status = '';
+    }
+      ?>
 <!-- section for displaying all hotels -->
 <section id="all_hostel">
   <div class="h4 text-center my-3 text-primary">
