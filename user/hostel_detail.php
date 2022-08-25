@@ -67,7 +67,7 @@ if (isset($_GET['hostel_id'])) {
                         </div>
                         <div class="detail_wrapper">
                             <div class="table_head">No. of rooms: </div>
-                            <p class="detail_value "><?php echo $cont; ?></p>
+                            <p class="detail_value badge badge-warning text-light"><?php echo $cont; ?></p>
                         </div>
                         <div class="detail_wrapper">
                             <div class="table_head ">Tell: </div>
@@ -79,7 +79,7 @@ if (isset($_GET['hostel_id'])) {
                         </div>
                         <div class="detail_wrapper">
                             <div class="table_head">@Email: </div>
-                            <div class="table_head"><?php echo trim($row['email']); ?></div>
+                            <div class="table_head text-primary "><?php echo trim($row['email']); ?></div>
     
                         </div>
                         <div class="detail_wrapper describe">descrptions</div>
