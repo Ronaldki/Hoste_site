@@ -28,7 +28,7 @@ include "../admin/config/connect.php";
 
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="../admin/upload/IMG-62a621083d1cc.jpg" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Second slide">
       </div>
       <div class="carousel-item slide_image_parent">
         <div class="caption ">
@@ -40,7 +40,7 @@ include "../admin/config/connect.php";
 
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="../admin/upload/IMG-62a5e08946d18.jpg" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Second slide">
       </div>
       <div class="carousel-item slide_image_parent">
         <div class="caption ">
@@ -52,7 +52,7 @@ include "../admin/config/connect.php";
 
           </div>
         </div>
-        <img class="d-block w-100 slide_image " height="600px" src="../admin/upload/IMG-62a629e90e1ff.jpg" alt="Second slide">
+        <img class="d-block w-100 slide_image " height="600px" src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Second slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
