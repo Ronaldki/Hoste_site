@@ -70,11 +70,11 @@ function auto_count() {
     const xhr = new XMLHttpRequest()
     xhr.open('get', 'http://localhost/HostelApp/Hoste_site/user/config/__count_ntificatipon.php')
     xhr.onload = () => {
-        let data = parseInt(xhr.responseText)
+        let data = xhr.responseText==NaN?'': parseInt(xhr.responseText)
 
         if(data!=0){
             let count = data < 10?'0' + data:data
-            document.getElementById('count_messe').innerHTML = count;        
+            document.getElementById('count_messe').innerHTML = count===NaN?'':count;        
 
         }
     }

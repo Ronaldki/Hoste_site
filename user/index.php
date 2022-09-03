@@ -132,14 +132,15 @@ include "../admin/config/connect.php";
   <div class="all_hostel_container px-5 my-5 w-75">
 
     <?php
+      $countPerPage = 15;
     if (isset($_GET['pages'])) {
       $_page = $_GET['pages'];
-      $pages = $_page * 3;
+      $pages = $_page * $countPerPage;
     } else {
       $pages = 0;
     }
 
-    $sql = "SELECT * FROM user_tbl, hostel_tbl WHERE user_tbl.user_id = hostel_tbl.user_id LIMIT $pages, 3 ";
+    $sql = "SELECT * FROM user_tbl, hostel_tbl WHERE user_tbl.user_id = hostel_tbl.user_id LIMIT $pages, $countPerPage  ";
     $result = mysqli_query($con, $sql);
     if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_assoc($result)) { ?>
@@ -175,7 +176,7 @@ $sqlp = "SELECT * FROM user_tbl, hostel_tbl WHERE user_tbl.user_id = hostel_tbl.
 $resultp = mysqli_query($con, $sqlp);
 
 $total_Items = mysqli_num_rows($resultp);
-$page = ceil($total_Items / 3);
+$page = ceil($total_Items / $countPerPage );
 ?>
 <nav aria-label="Page navigation example" class="bottom_pagonamtion">
   <ul class="pagination">
